@@ -27,7 +27,7 @@ const INTRO_EXTRA = 1500;
  * Ana slider. İlk açılış sinematik sekansla gelir (karanlık yüzey → ışık bandı → fotoğraf →
  * başlık maskeden yükselir → açıklama → düğmeler). Sonra slaytlar sırayla değişir:
  * fotoğraf çapraz geçişle oturur, başlık yeniden maskeden yükselir.
- * Görünmezken, imleç/odak slider üzerindeyken ve "durdur" ile döngü durur.
+ * Görünmezken, klavye odağı slider içindeyken ve "durdur" ile döngü durur; fare üzerine gelince durmaz.
  * Hareketi azalt: otomatik geçiş yok, kullanıcı göstergelerle değiştirir.
  */
 export function Hero({
@@ -124,9 +124,8 @@ export function Hero({
       aria-roledescription="carousel"
       aria-label={slides.map((s) => s.label).join(" · ")}
       className="hero relative isolate -mt-[var(--header-h)] h-[100svh] min-h-[620px] max-h-[1100px] overflow-hidden bg-graphite text-white"
-      onMouseEnter={() => setHold(true)}
-      onMouseLeave={() => setHold(false)}
-      onFocusCapture={() => setHold(true)}
+      // Fare üzerine gelince durmaz. Yalnız klavyeyle (Tab) slider içindeki bir bağlantıya gelince durur.
+      onFocusCapture={(e) => setHold((e.target as HTMLElement).matches(":focus-visible"))}
       onBlurCapture={() => setHold(false)}
     >
       <div ref={plateRef} className="hero-plate absolute inset-0">
