@@ -1,0 +1,122 @@
+// Aran Metal — veri modeli (PostgreSQL: Neon / Vercel Postgres / kendi sunucunuz)
+// DATABASE_URL          : uygulamanın kullandığı (pooled) bağlantı
+// DATABASE_URL_UNPOOLED : şema değişiklikleri için doğrudan bağlantı (pooler yoksa aynı değer)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+/// Admin kullanıcıları
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// Sayfa bölümlerinin düzenlenebilir içeriği (JSON olarak saklanır).
+/// Alan tanımları src/lib/content/schema.ts içindedir.
+model ContentSection {
+  key       String   @id
+  data      String
+  updatedAt DateTime @updatedAt
+}
+
+model Product {
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  code           String
+  /// copper | aluminum | alloy | other
+  category       String
+  badge          String?
+  badgeHighlight Boolean  @default(false)
+  image          String
+  inStock        Boolean  @default(true)
+
+  nameTr         String
+  nameEn         String
+  subtitleTr     String   @default("")
+  subtitleEn     String   @default("")
+  descriptionTr  String   @default("")
+  descriptionEn  String   @default("")
+  detailsTr      String   @default("")
+  detailsEn      String   @default("")
+
+  // Teknik standartlar tablosu
+  showInSpecTable Boolean @default(true)
+  specCode        String  @default("")
+  specMaterialTr  String  @default("")
+  specMaterialEn  String  @default("")
+  specPurity      String  @default("")
+  specFormTr      String  @default("")
+  specFormEn      String  @default("")
+  specUnitTr      String  @default("")
+  specUnitEn      String  @default("")
+
+  sortOrder      Int      @default(0)
+  published      Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model QuoteRequest {
+  id        String   @id @default(cuid())
+  name      String
+  company   String
+  email     String
+  phone     String
+  product   String   @default("")
+  quantity  String   @default("")
+  message   String   @default("")
+  locale    String   @default("tr")
+  /// new | in_progress | done
+  status    String   @default("new")
+  note      String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Yasal / serbest metin sayfaları (KVKK, Gizlilik vb.)
+model Page {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  titleTr   String
+  titleEn   String
+  bodyTr    String   @default("")
+  bodyEn    String   @default("")
+  published Boolean  @default(true)
+  updatedAt DateTime @updatedAt
+}
+
+/// Anasayfa slider'ı
+model Slide {
+  id               String   @id @default(cuid())
+  image            String
+  eyebrowTr        String   @default("")
+  eyebrowEn        String   @default("")
+  titleTr          String
+  titleEn          String   @default("")
+  highlightTr      String   @default("")
+  highlightEn      String   @default("")
+  descriptionTr    String   @default("")
+  descriptionEn    String   @default("")
+  primaryLabelTr   String   @default("")
+  primaryLabelEn   String   @default("")
+  /// Dil öneki olmadan site içi yol (/products) veya tam URL
+  primaryHref      String   @default("")
+  secondaryLabelTr String   @default("")
+  secondaryLabelEn String   @default("")
+  secondaryHref    String   @default("")
+  sortOrder        Int      @default(0)
+  published        Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}

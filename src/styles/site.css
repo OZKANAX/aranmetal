@@ -1,0 +1,728 @@
+@import "tailwindcss";
+
+/*
+ * Aran Metal — "Damgalı Parti" (The Stamped Lot)
+ * Grafit bölümler malzemeyi, kemik beyazı bölümler spesifikasyonu taşır.
+ * Bakır tek vurgu: her görünümde bir çizgi ve bir düğme.
+ *
+ * Eski token adları (paper, ink, navy...) iç sayfalar yeni dünyayı
+ * otomatik alsın diye korunur; değerleri yeni paletten gelir.
+ */
+@theme {
+  /* Açık bölümler — kemik beyazı */
+  --color-paper: #f8f4ee;
+  --color-paper-2: #efe8dd;
+  --color-paper-3: #e4dacb;
+  --color-ink: #1d1612;
+  --color-ink-2: #4d433c;
+  --color-ink-3: #6b5f56;
+  --color-rule: #ddd3c5;
+  --color-rule-strong: #b9ac9b;
+
+  /* Bakır — logodan */
+  --color-copper: #b4532a;
+  --color-copper-deep: #8f3e1d;
+  --color-copper-tint: #f3e3d6;
+  --color-copper-light: #e09a6a;
+  --color-copper-line: #c9783f;
+
+  /* Altın: vurgu kelimeleri ve ince çizgiler */
+  --color-gold: #d2ae5a;
+  --color-gold-deep: #8a6a1f;
+
+  /* Koyu bölümler — grafit (eski "navy" adları aynı rolü taşır) */
+  --color-navy: #17110e;
+  --color-navy-2: #201713;
+  --color-on-navy: #f1ebe3;
+  --color-on-navy-2: #b5a99d;
+  --color-navy-rule: #3a2d26;
+
+  /* Koyu bölümler — sıcak espresso (ad "graphite" geriye uyum için korunur) */
+  --color-graphite: #17110e;
+  --color-graphite-2: #201713;
+  --color-graphite-3: #2b201b;
+  --color-graphite-rule: #3a2d26;
+  --color-steel: #a89a8e;
+  --color-alu: #d8ccbf;
+  --color-bone: #f3ece2;
+
+  --color-success: #2f7a55;
+  --color-error: #b3261e;
+  --color-error-on-dark: #f08b7e;
+
+  --text-display: clamp(2.6rem, 1.1rem + 5.4vw, 6rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.032em;
+  --text-display--font-weight: 760;
+  --text-title: clamp(2.125rem, 1.35rem + 2.9vw, 4rem);
+  --text-title--line-height: 1.02;
+  --text-title--letter-spacing: -0.026em;
+  --text-title--font-weight: 720;
+  --text-heading: clamp(1.75rem, 1.3rem + 1.6vw, 2.75rem);
+  --text-heading--line-height: 1.08;
+  --text-heading--letter-spacing: -0.02em;
+  --text-heading--font-weight: 700;
+  --text-subheading: 1.375rem;
+  --text-subheading--line-height: 1.25;
+  --text-subheading--letter-spacing: -0.01em;
+  --text-subheading--font-weight: 650;
+  --text-lead: 1.1875rem;
+  --text-lead--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+  --text-small: 0.9375rem;
+  --text-small--line-height: 1.55;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.45;
+  --text-data: 0.75rem;
+  --text-data--line-height: 1.5;
+
+  /* Hareket token'ları */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+:root {
+  --dur-fast: 200ms;
+  --dur-normal: 420ms;
+  --dur-cinematic: 900ms;
+  /* Menü çubuğu üstte; piyasa şeridi ekranın altına sabittir. */
+  --ticker-h: 44px;
+  --nav-h: 72px;
+  --header-h: var(--nav-h);
+}
+@media (min-width: 1280px) {
+  :root {
+    --nav-h: 80px;
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-martian), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-serif: var(--font-ebgaramond), "Iowan Old Style", Georgia, serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--color-steel) var(--color-paper-2);
+  }
+  /* Sabit menü altında kalmaması için yalnızca bağlantıyla atlanan bölümlere boşluk. */
+  [id] {
+    scroll-margin-top: calc(var(--nav-h) + 1.5rem);
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-variation-settings: "wdth" 100;
+    font-feature-settings: "kern" 1;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-synthesis: none;
+    letter-spacing: -0.01em;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  table,
+  .tnum {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  ::selection {
+    background: var(--color-copper);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-copper-line);
+    outline-offset: 3px;
+  }
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+  input,
+  textarea,
+  select {
+    caret-color: var(--color-copper);
+  }
+}
+
+/* Başlık sesi: EB Garamond. Ölçü yazısı: Martian Mono.
+   Katmansız kural olduğu için başlıklardaki eski ağırlık/aralık yardımcılarını ezer. */
+.font-display {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  font-synthesis: none;
+  font-variant-numeric: lining-nums;
+}
+.font-mono {
+  font-variation-settings: "wdth" 92;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+/* Sayfa kenar boşlukları: tüm bölümler aynı 12 kolonluk ızgaraya oturur */
+.page-x {
+  @apply mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12;
+}
+.section-y {
+  @apply py-20 lg:py-32;
+}
+
+/* Form alanları (açık zemin) */
+.field {
+  @apply w-full rounded-none border border-rule-strong bg-paper px-3.5 py-3 text-body text-ink transition-[border-color,box-shadow] duration-200 placeholder:text-ink-3/80 hover:border-ink-3 focus:border-copper focus:outline-none focus:ring-3 focus:ring-copper/15;
+}
+.field[aria-invalid="true"] {
+  @apply border-error;
+}
+
+/* Metin bağlantısı: bakır, yönlü ok */
+.text-link {
+  @apply inline-flex items-center gap-1.5 font-semibold text-copper decoration-copper/40 underline-offset-4 transition-colors hover:text-copper-deep hover:underline;
+}
+
+/* Yönlü ok: bağlantı üzerine gelince ok kendi yönünde ilerler */
+.arrow-nudge {
+  transition: transform var(--dur-fast) var(--ease-out-quart);
+}
+.group:hover .arrow-nudge,
+.group:focus-visible .arrow-nudge {
+  transform: translateX(4px);
+}
+
+/* Serbest metin sayfaları (KVKK vb.) */
+.prose-report {
+  @apply text-body text-ink-2 max-w-[68ch];
+}
+.prose-report h2 {
+  @apply text-subheading text-ink mt-12 mb-3 pt-6 border-t border-rule;
+}
+.prose-report h2:first-child {
+  @apply mt-0;
+}
+.prose-report p {
+  @apply mb-4;
+}
+.prose-report ul {
+  @apply list-disc pl-5 mb-4 marker:text-copper;
+}
+.prose-report li {
+  @apply mb-1;
+}
+
+/* ---------- Birincil düğme: bakır dolgu soldan sağa akar ---------- */
+.btn-copper {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-copper);
+  color: #fff;
+}
+.btn-copper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-copper-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-normal) var(--ease-out-quint);
+}
+.btn-copper:hover::before,
+.btn-copper:focus-visible::before {
+  transform: scaleX(1);
+}
+.btn-copper:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  transition: transform var(--dur-normal) var(--ease-out-quint);
+}
+.site-header__bg {
+  transition: opacity var(--dur-normal) var(--ease-out-quint);
+}
+.site-header__inner {
+  transition: transform var(--dur-normal) var(--ease-out-quint);
+}
+.site-header__logo {
+  transform-origin: left center;
+  transition: transform var(--dur-normal) var(--ease-out-quint);
+}
+.site-header[data-compact="true"] {
+  transform: translateY(-10px);
+}
+.site-header[data-compact="true"] .site-header__inner {
+  transform: translateY(5px);
+}
+.site-header[data-compact="true"] .site-header__logo {
+  transform: scale(0.88);
+}
+
+/* Mobil menü açıkken başlık her zaman dolu zeminlidir */
+.site-header:has(#mobile-menu) .site-header__bg {
+  opacity: 1;
+}
+/* Açık menü sabit konumlu; başlıkta transform kalırsa menü başlığın kutusuna hapsolur */
+.site-header:has(#mobile-menu),
+.site-header:has(#mobile-menu) .site-header__inner {
+  transform: none;
+}
+
+
+/* Menü alt çizgisi: soldan büyür, çıkarken sağa kayar */
+.nav-line {
+  position: relative;
+}
+.nav-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: var(--color-copper-line);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--dur-normal) var(--ease-out-quint);
+}
+.nav-line:hover::after,
+.nav-line:focus-visible::after,
+.nav-line[aria-current="page"]::after,
+.group\/dd:hover > .nav-line::after,
+.group\/dd:focus-within > .nav-line::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@keyframes menu-drop {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.menu-drop {
+  animation: menu-drop var(--dur-normal) var(--ease-out-quint) both;
+}
+
+/* ---------- Hero: açılış sekansı ---------- */
+/*
+ * 1 karanlık yüzey  2 ışık bandı  3 fotoğraf belirir  4 başlık maskeden yükselir
+ * 5 açıklama  6 düğmeler  7 parti şeridi en son damgalanır
+ */
+@keyframes plate-resolve {
+  from {
+    opacity: 0;
+    transform: scale(1.09);
+    filter: brightness(0.35) saturate(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: brightness(1) saturate(1);
+  }
+}
+@keyframes plate-drift {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.055) translate3d(-1.2%, -0.6%, 0);
+  }
+}
+@keyframes light-sweep {
+  0% {
+    transform: translate3d(-60%, 0, 0) skewX(-14deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  22% {
+    transform: translate3d(160%, 0, 0) skewX(-14deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(160%, 0, 0) skewX(-14deg);
+    opacity: 0;
+  }
+}
+@keyframes line-rise {
+  from {
+    transform: translate3d(0, 108%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes wipe-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes settle-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+    filter: blur(2px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* İlk açılış: karanlıktan fotoğraf belirir (bir kez) */
+.hero-intro {
+  animation: plate-resolve 1.8s var(--ease-out-quint) 0.15s both;
+}
+/* Slaytlar: çapraz geçiş; etkin fotoğraf yavaşça oturur */
+.hero-slide {
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-in-out-sine);
+  will-change: opacity;
+}
+.hero-slide__media {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.hero-slide[data-active="true"] {
+  opacity: 1;
+}
+@keyframes slide-settle {
+  from {
+    transform: scale(1.07);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.hero-slide[data-active="true"] .hero-slide__media {
+  animation: slide-settle 4s var(--ease-out-quart) both;
+}
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.hero-progress {
+  animation-name: hero-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+.hero-sweep {
+  /* Metal yüzeyde gezinen yansıma; overlay ile yalnız açık tonları parlatır */
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 228, 206, 0) 30%,
+    rgba(255, 228, 206, 0.1) 50%,
+    rgba(255, 228, 206, 0) 70%,
+    transparent 100%
+  );
+  animation: light-sweep 15s var(--ease-in-out-sine) 0.35s infinite;
+}
+.hero-line > span {
+  display: block;
+  animation: line-rise 1.05s var(--ease-out-quint) both;
+}
+.hero-lead {
+  animation: wipe-in 1.1s var(--ease-out-quint) 1.15s both;
+}
+.hero-actions {
+  animation: settle-in 0.7s var(--ease-out-quart) 1.4s both;
+}
+.hero-rail__rule {
+  transform-origin: left;
+  animation: rule-draw 1.1s var(--ease-out-quint) 1.6s both;
+}
+.hero-rail__item {
+  animation: stamp 0.5s var(--ease-out-quart) both;
+}
+.hero[data-paused="true"] .hero-slide__media,
+.hero[data-paused="true"] .hero-sweep {
+  animation-play-state: paused;
+}
+
+/* Hero'dan parti şeridine geçiş: kamera geri çekilir, fotoğraf çerçeveye oturur */
+.hero-plate {
+  --p: 0;
+  clip-path: inset(calc(var(--p) * 7%) calc(var(--p) * 4%) 0 calc(var(--p) * 4%));
+  transform: translate3d(0, calc(var(--p) * 18%), 0);
+}
+.hero-copy {
+  --p: 0;
+  transform: translate3d(0, calc(var(--p) * -14vh), 0);
+  opacity: calc(1 - var(--p) * 1.6);
+}
+
+/* ---------- Parti şeridi (ürünler) ---------- */
+.lot-light {
+  /* İmleç ışığı: yalnız metal yüzeyin açık tonlarını yükseltir */
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 40%),
+    rgba(255, 232, 214, 0.3) 0%,
+    rgba(255, 232, 214, 0.08) 22%,
+    transparent 46%
+  );
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity var(--dur-normal) var(--ease-out-quart);
+}
+.lot-frame:hover .lot-light {
+  opacity: 1;
+}
+.lot-frame__img {
+  transition: transform 1.2s var(--ease-out-quint);
+}
+.lot-frame:hover .lot-frame__img {
+  transform: scale(1.015) translate3d(calc((var(--mxn, 0)) * -6px), calc((var(--myn, 0)) * -4px), 0);
+}
+.lot-spec-row {
+  transition:
+    color var(--dur-fast) var(--ease-out-quart),
+    border-color var(--dur-fast) var(--ease-out-quart);
+}
+.lot-frame:hover .lot-spec-row {
+  border-color: var(--color-graphite-rule);
+}
+.lot-frame:hover .lot-spec-row dd {
+  color: #fff;
+}
+.lot-frame__tag-rule {
+  transform-origin: left;
+  transform: scaleX(0.18);
+  transition: transform 0.7s var(--ease-out-quint);
+}
+.lot-frame:hover .lot-frame__tag-rule,
+.lot-frame[data-active="true"] .lot-frame__tag-rule {
+  transform: scaleX(1);
+}
+
+/* Kısa masaüstü ekranlarda parti etiketinden ikincil satırlar çekilir */
+@media (min-width: 1024px) and (max-height: 820px) {
+  .lot-optional {
+    display: none;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sayısal değer geçişi: yeni değer alttan yükselir */
+@keyframes figure-in {
+  from {
+    transform: translate3d(0, 0.5em, 0);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.figure-in {
+  animation: figure-in 0.5s var(--ease-out-quint) both;
+}
+
+/* ---------- LME çizgisi ---------- */
+/* Çizgi soldan sağa açılır (non-scaling-stroke ile dasharray güvenilmez) */
+.lme-reveal {
+  clip-path: inset(0 100% 0 0);
+}
+.lme-reveal[data-drawn="true"] {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 2.4s var(--ease-out-quint);
+}
+
+/* ---------- Rota haritası ---------- */
+.route-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+[data-routes="drawn"] .route-path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.6s var(--ease-out-quint);
+}
+.route-node {
+  transition:
+    opacity var(--dur-normal) var(--ease-out-quart),
+    transform var(--dur-normal) var(--ease-out-quart);
+}
+
+/* Tedarik zinciri adımları: bakır çizgi ilerledikçe düğüm damgalanır */
+.chain-fill {
+  transform-origin: left;
+  transform: scaleX(var(--chain, 0));
+}
+@media (max-width: 1023px) {
+  .chain-fill {
+    transform-origin: top;
+    transform: scaleY(var(--chain, 0));
+  }
+}
+.chain-node {
+  transition:
+    background-color var(--dur-normal) var(--ease-out-quart),
+    border-color var(--dur-normal) var(--ease-out-quart),
+    transform var(--dur-normal) var(--ease-out-quart);
+}
+.chain-node[data-reached="true"] {
+  background: var(--color-copper-line);
+  border-color: var(--color-copper-line);
+}
+
+/* ---------- Teklif formu ---------- */
+.rq-field {
+  position: relative;
+}
+.rq-field__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--color-copper-line);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-normal) var(--ease-out-quint);
+  pointer-events: none;
+}
+.rq-field:focus-within .rq-field__line {
+  transform: scaleX(1);
+}
+.rq-input {
+  @apply w-full bg-transparent border-0 border-b border-graphite-rule px-0 pt-1 pb-3 text-body text-on-navy placeholder:text-steel focus:outline-none transition-colors duration-200;
+}
+.rq-input:hover {
+  border-color: var(--color-steel);
+}
+.rq-input[aria-invalid="true"] {
+  border-color: var(--color-error-on-dark);
+}
+.rq-option {
+  transition:
+    border-color var(--dur-fast) var(--ease-out-quart),
+    background-color var(--dur-fast) var(--ease-out-quart),
+    color var(--dur-fast) var(--ease-out-quart);
+}
+
+/* ---------- Hareketi azalt ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-intro,
+  .hero-slide__media,
+  .hero-progress,
+  .hero-sweep,
+  .hero-line > span,
+  .hero-lead,
+  .hero-actions,
+  .hero-rail__rule,
+  .hero-rail__item,
+  .menu-drop,
+  .figure-in {
+    animation: none !important;
+  }
+  .hero-sweep {
+    display: none;
+  }
+  .hero-plate,
+  .hero-copy {
+    clip-path: none;
+    transform: none;
+    opacity: 1;
+  }
+  .lot-frame:hover .lot-frame__img {
+    transform: none;
+  }
+  .lme-reveal {
+    clip-path: none;
+    transition: none !important;
+  }
+  .route-path {
+    stroke-dashoffset: 0;
+    transition: none !important;
+  }
+  .site-header,
+  .site-header__inner,
+  .site-header__logo,
+  .btn-copper::before,
+  .nav-line::after,
+  .lot-frame__img,
+  .lot-frame__tag-rule,
+  .rq-field__line {
+    transition-duration: 1ms !important;
+  }
+}
+
+/* Admin'den büyük harfle girilmiş kısa etiketleri cümle düzenine çevirir (lang="tr" ile İ/ı doğru işlenir) */
+.sentence {
+  text-transform: lowercase;
+}
+.sentence::first-letter {
+  text-transform: uppercase;
+}

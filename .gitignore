@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# uploads & db
+/storage
+/prisma/*.db
+/prisma/*.db-journal
+!.env.example
+
+.vercel
+.env*
+
+# Impeccable: inceleme çekimleri, yedekler ve karar sayfası durumu (yerel)
+/.impeccable/review/
+/.impeccable/originals/
+/.impeccable/questions/
+/.impeccable/*-payload.json
+/.impeccable/brief-body.md

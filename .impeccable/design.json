@@ -1,0 +1,772 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T13:49:44.213Z",
+  "title": "Design System: Aran Metal",
+  "extensions": {
+    "colorMeta": {
+      "copper": {
+        "role": "primary",
+        "displayName": "Copper Orange",
+        "canonical": "#b4532a",
+        "oklch": "oklch(55.7% 0.137 41.9)",
+        "tonalRamp": [
+          "oklch(15% 0.082 41.9)",
+          "oklch(25% 0.082 41.9)",
+          "oklch(35% 0.137 41.9)",
+          "oklch(45% 0.137 41.9)",
+          "oklch(58% 0.137 41.9)",
+          "oklch(70% 0.137 41.9)",
+          "oklch(82% 0.137 41.9)",
+          "oklch(95% 0.082 41.9)"
+        ]
+      },
+      "copper-deep": {
+        "role": "primary",
+        "displayName": "Pressed Copper",
+        "canonical": "#8f3e1d",
+        "oklch": "oklch(46.6% 0.119 41.2)",
+        "tonalRamp": [
+          "oklch(15% 0.071 41.2)",
+          "oklch(25% 0.071 41.2)",
+          "oklch(35% 0.119 41.2)",
+          "oklch(45% 0.119 41.2)",
+          "oklch(58% 0.119 41.2)",
+          "oklch(70% 0.119 41.2)",
+          "oklch(82% 0.119 41.2)",
+          "oklch(95% 0.071 41.2)"
+        ]
+      },
+      "copper-line": {
+        "role": "primary",
+        "displayName": "Copper Wire",
+        "canonical": "#c9783f",
+        "oklch": "oklch(65.0% 0.124 53.7)",
+        "tonalRamp": [
+          "oklch(15% 0.075 53.7)",
+          "oklch(25% 0.075 53.7)",
+          "oklch(35% 0.124 53.7)",
+          "oklch(45% 0.124 53.7)",
+          "oklch(58% 0.124 53.7)",
+          "oklch(70% 0.124 53.7)",
+          "oklch(82% 0.124 53.7)",
+          "oklch(95% 0.075 53.7)"
+        ]
+      },
+      "copper-light": {
+        "role": "primary",
+        "displayName": "Annealed Copper",
+        "canonical": "#e09a6a",
+        "oklch": "oklch(74.5% 0.105 54.8)",
+        "tonalRamp": [
+          "oklch(15% 0.063 54.8)",
+          "oklch(25% 0.063 54.8)",
+          "oklch(35% 0.105 54.8)",
+          "oklch(45% 0.105 54.8)",
+          "oklch(58% 0.105 54.8)",
+          "oklch(70% 0.105 54.8)",
+          "oklch(82% 0.105 54.8)",
+          "oklch(95% 0.063 54.8)"
+        ]
+      },
+      "copper-tint": {
+        "role": "primary",
+        "displayName": "Copper Tint",
+        "canonical": "#f3e3d6",
+        "oklch": "oklch(92.5% 0.025 61.6)",
+        "tonalRamp": [
+          "oklch(15% 0.015 61.6)",
+          "oklch(25% 0.015 61.6)",
+          "oklch(35% 0.025 61.6)",
+          "oklch(45% 0.025 61.6)",
+          "oklch(58% 0.025 61.6)",
+          "oklch(70% 0.025 61.6)",
+          "oklch(82% 0.025 61.6)",
+          "oklch(95% 0.015 61.6)"
+        ]
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Ledger Gold",
+        "canonical": "#d2ae5a",
+        "oklch": "oklch(76.6% 0.111 86.4)",
+        "tonalRamp": [
+          "oklch(15% 0.067 86.4)",
+          "oklch(25% 0.067 86.4)",
+          "oklch(35% 0.111 86.4)",
+          "oklch(45% 0.111 86.4)",
+          "oklch(58% 0.111 86.4)",
+          "oklch(70% 0.111 86.4)",
+          "oklch(82% 0.111 86.4)",
+          "oklch(95% 0.067 86.4)"
+        ]
+      },
+      "gold-deep": {
+        "role": "secondary",
+        "displayName": "Deep Gold",
+        "canonical": "#8a6a1f",
+        "oklch": "oklch(54.3% 0.098 84.4)",
+        "tonalRamp": [
+          "oklch(15% 0.059 84.4)",
+          "oklch(25% 0.059 84.4)",
+          "oklch(35% 0.098 84.4)",
+          "oklch(45% 0.098 84.4)",
+          "oklch(58% 0.098 84.4)",
+          "oklch(70% 0.098 84.4)",
+          "oklch(82% 0.098 84.4)",
+          "oklch(95% 0.059 84.4)"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Espresso",
+        "canonical": "#17110e",
+        "oklch": "oklch(18.4% 0.012 48.1)",
+        "tonalRamp": [
+          "oklch(15% 0.007 48.1)",
+          "oklch(25% 0.007 48.1)",
+          "oklch(35% 0.012 48.1)",
+          "oklch(45% 0.012 48.1)",
+          "oklch(58% 0.012 48.1)",
+          "oklch(70% 0.012 48.1)",
+          "oklch(82% 0.012 48.1)",
+          "oklch(95% 0.007 48.1)"
+        ]
+      },
+      "graphite-2": {
+        "role": "neutral",
+        "displayName": "Espresso Plate",
+        "canonical": "#201713",
+        "oklch": "oklch(21.4% 0.017 45.2)",
+        "tonalRamp": [
+          "oklch(15% 0.010 45.2)",
+          "oklch(25% 0.010 45.2)",
+          "oklch(35% 0.017 45.2)",
+          "oklch(45% 0.017 45.2)",
+          "oklch(58% 0.017 45.2)",
+          "oklch(70% 0.017 45.2)",
+          "oklch(82% 0.017 45.2)",
+          "oklch(95% 0.010 45.2)"
+        ]
+      },
+      "graphite-3": {
+        "role": "neutral",
+        "displayName": "Espresso Lift",
+        "canonical": "#2b201b",
+        "oklch": "oklch(25.5% 0.019 45.7)",
+        "tonalRamp": [
+          "oklch(15% 0.012 45.7)",
+          "oklch(25% 0.012 45.7)",
+          "oklch(35% 0.019 45.7)",
+          "oklch(45% 0.019 45.7)",
+          "oklch(58% 0.019 45.7)",
+          "oklch(70% 0.019 45.7)",
+          "oklch(82% 0.019 45.7)",
+          "oklch(95% 0.012 45.7)"
+        ]
+      },
+      "graphite-rule": {
+        "role": "neutral",
+        "displayName": "Espresso Seam",
+        "canonical": "#3a2d26",
+        "oklch": "oklch(31.0% 0.023 49.8)",
+        "tonalRamp": [
+          "oklch(15% 0.014 49.8)",
+          "oklch(25% 0.014 49.8)",
+          "oklch(35% 0.023 49.8)",
+          "oklch(45% 0.023 49.8)",
+          "oklch(58% 0.023 49.8)",
+          "oklch(70% 0.023 49.8)",
+          "oklch(82% 0.023 49.8)",
+          "oklch(95% 0.014 49.8)"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Warm Taupe",
+        "canonical": "#a89a8e",
+        "oklch": "oklch(69.5% 0.024 63.1)",
+        "tonalRamp": [
+          "oklch(15% 0.014 63.1)",
+          "oklch(25% 0.014 63.1)",
+          "oklch(35% 0.024 63.1)",
+          "oklch(45% 0.024 63.1)",
+          "oklch(58% 0.024 63.1)",
+          "oklch(70% 0.024 63.1)",
+          "oklch(82% 0.024 63.1)",
+          "oklch(95% 0.014 63.1)"
+        ]
+      },
+      "alu": {
+        "role": "neutral",
+        "displayName": "Oat",
+        "canonical": "#d8ccbf",
+        "oklch": "oklch(85.1% 0.022 69.7)",
+        "tonalRamp": [
+          "oklch(15% 0.013 69.7)",
+          "oklch(25% 0.013 69.7)",
+          "oklch(35% 0.022 69.7)",
+          "oklch(45% 0.022 69.7)",
+          "oklch(58% 0.022 69.7)",
+          "oklch(70% 0.022 69.7)",
+          "oklch(82% 0.022 69.7)",
+          "oklch(95% 0.013 69.7)"
+        ]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "#f3ece2",
+        "oklch": "oklch(94.6% 0.015 77.1)",
+        "tonalRamp": [
+          "oklch(15% 0.009 77.1)",
+          "oklch(25% 0.009 77.1)",
+          "oklch(35% 0.015 77.1)",
+          "oklch(45% 0.015 77.1)",
+          "oklch(58% 0.015 77.1)",
+          "oklch(70% 0.015 77.1)",
+          "oklch(82% 0.015 77.1)",
+          "oklch(95% 0.009 77.1)"
+        ]
+      },
+      "on-navy": {
+        "role": "neutral",
+        "displayName": "On-espresso Text",
+        "canonical": "#f1ebe3",
+        "oklch": "oklch(94.3% 0.013 75.4)",
+        "tonalRamp": [
+          "oklch(15% 0.008 75.4)",
+          "oklch(25% 0.008 75.4)",
+          "oklch(35% 0.013 75.4)",
+          "oklch(45% 0.013 75.4)",
+          "oklch(58% 0.013 75.4)",
+          "oklch(70% 0.013 75.4)",
+          "oklch(82% 0.013 75.4)",
+          "oklch(95% 0.008 75.4)"
+        ]
+      },
+      "on-navy-2": {
+        "role": "neutral",
+        "displayName": "On-espresso Secondary",
+        "canonical": "#b5a99d",
+        "oklch": "oklch(74.2% 0.022 67.5)",
+        "tonalRamp": [
+          "oklch(15% 0.013 67.5)",
+          "oklch(25% 0.013 67.5)",
+          "oklch(35% 0.022 67.5)",
+          "oklch(45% 0.022 67.5)",
+          "oklch(58% 0.022 67.5)",
+          "oklch(70% 0.022 67.5)",
+          "oklch(82% 0.022 67.5)",
+          "oklch(95% 0.013 67.5)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "#f8f4ee",
+        "oklch": "oklch(96.9% 0.009 78.3)",
+        "tonalRamp": [
+          "oklch(15% 0.005 78.3)",
+          "oklch(25% 0.005 78.3)",
+          "oklch(35% 0.009 78.3)",
+          "oklch(45% 0.009 78.3)",
+          "oklch(58% 0.009 78.3)",
+          "oklch(70% 0.009 78.3)",
+          "oklch(82% 0.009 78.3)",
+          "oklch(95% 0.005 78.3)"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Cream 2",
+        "canonical": "#efe8dd",
+        "oklch": "oklch(93.3% 0.017 79.3)",
+        "tonalRamp": [
+          "oklch(15% 0.010 79.3)",
+          "oklch(25% 0.010 79.3)",
+          "oklch(35% 0.017 79.3)",
+          "oklch(45% 0.017 79.3)",
+          "oklch(58% 0.017 79.3)",
+          "oklch(70% 0.017 79.3)",
+          "oklch(82% 0.017 79.3)",
+          "oklch(95% 0.010 79.3)"
+        ]
+      },
+      "paper-3": {
+        "role": "neutral",
+        "displayName": "Cream 3",
+        "canonical": "#e4dacb",
+        "oklch": "oklch(89.2% 0.023 78.2)",
+        "tonalRamp": [
+          "oklch(15% 0.014 78.2)",
+          "oklch(25% 0.014 78.2)",
+          "oklch(35% 0.023 78.2)",
+          "oklch(45% 0.023 78.2)",
+          "oklch(58% 0.023 78.2)",
+          "oklch(70% 0.023 78.2)",
+          "oklch(82% 0.023 78.2)",
+          "oklch(95% 0.014 78.2)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1d1612",
+        "oklch": "oklch(20.7% 0.014 51.4)",
+        "tonalRamp": [
+          "oklch(15% 0.008 51.4)",
+          "oklch(25% 0.008 51.4)",
+          "oklch(35% 0.014 51.4)",
+          "oklch(45% 0.014 51.4)",
+          "oklch(58% 0.014 51.4)",
+          "oklch(70% 0.014 51.4)",
+          "oklch(82% 0.014 51.4)",
+          "oklch(95% 0.008 51.4)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#4d433c",
+        "oklch": "oklch(39.1% 0.018 57.2)",
+        "tonalRamp": [
+          "oklch(15% 0.011 57.2)",
+          "oklch(25% 0.011 57.2)",
+          "oklch(35% 0.018 57.2)",
+          "oklch(45% 0.018 57.2)",
+          "oklch(58% 0.018 57.2)",
+          "oklch(70% 0.018 57.2)",
+          "oklch(82% 0.018 57.2)",
+          "oklch(95% 0.011 57.2)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "#6b5f56",
+        "oklch": "oklch(49.4% 0.021 59.1)",
+        "tonalRamp": [
+          "oklch(15% 0.013 59.1)",
+          "oklch(25% 0.013 59.1)",
+          "oklch(35% 0.021 59.1)",
+          "oklch(45% 0.021 59.1)",
+          "oklch(58% 0.021 59.1)",
+          "oklch(70% 0.021 59.1)",
+          "oklch(82% 0.021 59.1)",
+          "oklch(95% 0.013 59.1)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#ddd3c5",
+        "oklch": "oklch(87.1% 0.022 76.5)",
+        "tonalRamp": [
+          "oklch(15% 0.013 76.5)",
+          "oklch(25% 0.013 76.5)",
+          "oklch(35% 0.022 76.5)",
+          "oklch(45% 0.022 76.5)",
+          "oklch(58% 0.022 76.5)",
+          "oklch(70% 0.022 76.5)",
+          "oklch(82% 0.022 76.5)",
+          "oklch(95% 0.013 76.5)"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Rule Strong",
+        "canonical": "#b9ac9b",
+        "oklch": "oklch(75.1% 0.028 74.7)",
+        "tonalRamp": [
+          "oklch(15% 0.017 74.7)",
+          "oklch(25% 0.017 74.7)",
+          "oklch(35% 0.028 74.7)",
+          "oklch(45% 0.028 74.7)",
+          "oklch(58% 0.028 74.7)",
+          "oklch(70% 0.028 74.7)",
+          "oklch(82% 0.028 74.7)",
+          "oklch(95% 0.017 74.7)"
+        ]
+      },
+      "success": {
+        "role": "status",
+        "displayName": "Success",
+        "canonical": "#2f7a55",
+        "oklch": "oklch(52.2% 0.095 158.9)",
+        "tonalRamp": [
+          "oklch(15% 0.057 158.9)",
+          "oklch(25% 0.057 158.9)",
+          "oklch(35% 0.095 158.9)",
+          "oklch(45% 0.095 158.9)",
+          "oklch(58% 0.095 158.9)",
+          "oklch(70% 0.095 158.9)",
+          "oklch(82% 0.095 158.9)",
+          "oklch(95% 0.057 158.9)"
+        ]
+      },
+      "error": {
+        "role": "status",
+        "displayName": "Error",
+        "canonical": "#b3261e",
+        "oklch": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "oklch(15% 0.107 28.7)",
+          "oklch(25% 0.107 28.7)",
+          "oklch(35% 0.178 28.7)",
+          "oklch(45% 0.178 28.7)",
+          "oklch(58% 0.178 28.7)",
+          "oklch(70% 0.178 28.7)",
+          "oklch(82% 0.178 28.7)",
+          "oklch(95% 0.107 28.7)"
+        ]
+      },
+      "error-on-dark": {
+        "role": "status",
+        "displayName": "Error on Dark",
+        "canonical": "#f08b7e",
+        "oklch": "oklch(74.2% 0.125 28.2)",
+        "tonalRamp": [
+          "oklch(15% 0.075 28.2)",
+          "oklch(25% 0.075 28.2)",
+          "oklch(35% 0.125 28.2)",
+          "oklch(45% 0.125 28.2)",
+          "oklch(58% 0.125 28.2)",
+          "oklch(70% 0.125 28.2)",
+          "oklch(82% 0.125 28.2)",
+          "oklch(95% 0.075 28.2)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Centered hero headline (last line gold) and footer closing statement; EB Garamond 500."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Chapter headlines; EB Garamond 500."
+      },
+      "heading": {
+        "displayName": "Heading",
+        "purpose": "Product names in lot frames, pinned rail headline, request success; EB Garamond 500."
+      },
+      "subheading": {
+        "displayName": "Subheading",
+        "purpose": "Price-term and chain-step terms; EB Garamond 500."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero lead from sm up, first story paragraph."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text at 52-60ch."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Spec rows, navigation, secondary actions."
+      },
+      "button-label": {
+        "displayName": "Button Label",
+        "purpose": "Copper call to act: Archivo 600, uppercase, +0.12em."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Hints, legal."
+      },
+      "data": {
+        "displayName": "Lot Data",
+        "purpose": "Martian Mono, lot data and instrument readouts only: codes, purity lines, standards, coordinates, field labels, chart captions, market strip label and clock."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dropdown-drop",
+        "value": "0 24px 48px -16px rgba(0,0,0,0.6)",
+        "purpose": "Desktop navigation dropdown panel only. The system is otherwise flat."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Available long-tail deceleration."
+      },
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Small state changes: arrow nudge, settle-in, stamp, route nodes."
+      },
+      {
+        "name": "ease-out-quint",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default: button fill sweep, underline, header compaction, reveals."
+      },
+      {
+        "name": "ease-in-out-sine",
+        "value": "cubic-bezier(0.37, 0, 0.63, 1)",
+        "purpose": "Ambient loops: hero plate drift, light sweep."
+      },
+      {
+        "name": "dur-fast",
+        "value": "200ms",
+        "purpose": "Colour changes, arrow nudge."
+      },
+      {
+        "name": "dur-normal",
+        "value": "420ms",
+        "purpose": "Fill sweep, underline, header, field focus line."
+      },
+      {
+        "name": "dur-cinematic",
+        "value": "900ms",
+        "purpose": "Large reveals."
+      },
+      {
+        "name": "hero-opening-sequence",
+        "value": "plate-resolve 1.8s @0.15s; light-sweep 15s loop @0.35s; line-rise 1.05s @0.7s +0.12s/line; wipe-in lead 1.1s @1.15s; settle-in actions 0.7s @1.4s; stamp scroll cue 0.5s @2.2s",
+        "purpose": "The one opening sequence; hero only. The plate then drifts 26s alternate and pauses (with the video) off-screen. Optional hero.backgroundVideo plays muted in the plate with the image as poster."
+      },
+      {
+        "name": "hero-to-rail-inset",
+        "value": "--p 0..1 on exit: plate clip-path inset(7% 4% 0 4%) * p, translateY 18% * p; copy translateY -14vh * p, opacity 1 - 1.6p",
+        "purpose": "Camera pulls back as the lot rail rises over the hero; the centered copy lifts away."
+      },
+      {
+        "name": "lot-rail-pin",
+        "value": "section N x 100vh, sticky frame, translateX(-p*(N-1)*100vw); idle snap 180ms after scroll stops to nearest frame",
+        "purpose": "Pinned horizontal lot rail on desktop (>=1024px) with motion allowed."
+      },
+      {
+        "name": "lme-reveal-and-ticker",
+        "value": "clip-path inset(0 100% 0 0) -> inset(0) over 2.4s ease-out-quint; then translateX(-step) every 2400ms linear",
+        "purpose": "The illustrative LME line opens left to right, then ticks while visible."
+      },
+      {
+        "name": "route-draw-and-chain-fill",
+        "value": "stroke-dashoffset 1 -> 0 over 1.6s, delay 0.15s + 0.18s per arc; chain scaleX(--chain) bound to scroll progress 0.3..0.65",
+        "purpose": "Route arcs draw from Istanbul; the copper rail fills and stamps chain nodes."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animations none, transitions 1ms, plate and copy un-inset, rail free-scroll, LME and routes drawn, chain full, video replaced by image",
+        "purpose": "Everything visible at rest."
+      },
+      {
+        "name": "market-strip-load",
+        "value": "TradingView ticker tape injected on requestIdleCallback (fallback 1200ms); Istanbul clock updates every 1000ms",
+        "purpose": "Keeps the third-party strip off the critical path; the strip itself does not animate."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px",
+        "note": "Istanbul clock and hero scroll cue appear"
+      },
+      {
+        "name": "md",
+        "value": "768px",
+        "note": "market strip label and note appear"
+      },
+      {
+        "name": "lg",
+        "value": "1024px",
+        "note": "lot rail pins; 12-column layouts engage"
+      },
+      {
+        "name": "xl",
+        "value": "1280px",
+        "note": "desktop nav; nav bar 80px"
+      },
+      {
+        "name": "short-desktop",
+        "value": "(min-width: 1024px) and (max-height: 820px)",
+        "note": "optional lot rows withdraw"
+      }
+    ],
+    "layoutVars": [
+      {
+        "name": "nav-h",
+        "value": "72px (80px from 1280px)",
+        "purpose": "Header height (the header is the nav bar only); --header-h aliases it; anchors scroll to nav-h + 1.5rem."
+      },
+      {
+        "name": "ticker-h",
+        "value": "44px",
+        "purpose": "Fixed bottom market strip; body padding-bottom, hero bottom padding and scroll cue offset reserve it."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Copper Button",
+      "kind": "button",
+      "refersTo": "button-copper",
+      "description": "The single copper call to act per view: uppercase label tracked +0.12em, trailing arrow, copper-deep fill sweep on hover.",
+      "html": "<a class=\"ds-btn-copper\" href=\"#\">REQUEST A QUOTE <span class=\"ds-arrow\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></span></a>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-btn-copper{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 32px;background:var(--color-copper);color:#fff;font-weight:600;font-size:0.9375rem;letter-spacing:0.12em;text-decoration:none;border-radius:0;}.ds-btn-copper::before{content:\"\";position:absolute;inset:0;z-index:-1;background:var(--color-copper-deep);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-normal) var(--ease-out-quint);}.ds-btn-copper:hover::before,.ds-btn-copper:focus-visible::before{transform:scaleX(1);}.ds-btn-copper:focus-visible{outline:2px solid var(--color-copper-line);outline-offset:3px;}.ds-btn-copper:active{transform:translateY(1px);}.ds-arrow{display:inline-flex;transition:transform var(--dur-fast) var(--ease-out-quart);}.ds-btn-copper:hover .ds-arrow,.ds-btn-copper:focus-visible .ds-arrow{transform:translateX(4px);}"
+    },
+    {
+      "name": "Hero Headline",
+      "kind": "custom",
+      "refersTo": "button-copper",
+      "description": "Centered serif headline on the espresso-veiled plate, last line in gold; uppercase copper button beside a quiet link; gold scroll cue.",
+      "html": "<div class=\"ds-hero\"><h1 class=\"ds-hero__h\"><span>Metal, sourced</span><span class=\"ds-gold\">with certainty.</span></h1><p class=\"ds-hero__lead\">Grade A copper cathode and P1020 aluminium from LME-registered refineries.</p><div class=\"ds-hero__actions\"><a class=\"ds-hero__btn\" href=\"#\">REQUEST A QUOTE</a><a class=\"ds-hero__link\" href=\"#\">Explore products</a></div><span class=\"ds-hero__cue\">Scroll<i></i></span></div>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:56px 24px 40px;background:radial-gradient(ellipse at center,rgba(23,17,14,0.55) 0%,rgba(23,17,14,0.25) 55%,rgba(23,17,14,0.7) 100%),linear-gradient(135deg,#5a2a18,#2a1a12 60%,#17110e);color:#fff;}.ds-hero__h{margin:0;font-family:var(--font-serif);font-weight:500;font-size:clamp(2.25rem,6vw,3.5rem);line-height:1.02;letter-spacing:-0.012em;max-width:16ch;}.ds-hero__h span{display:block;}.ds-gold{color:var(--color-gold);}.ds-hero__lead{margin:20px 0 0;max-width:60ch;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:1rem;line-height:1.65;color:rgba(241,235,227,0.85);}.ds-hero__actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 32px;margin-top:28px;}.ds-hero__btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;height:56px;padding:0 32px;background:var(--color-copper);color:#fff;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:0.9375rem;font-weight:600;letter-spacing:0.12em;text-decoration:none;}.ds-hero__btn::before{content:\"\";position:absolute;inset:0;z-index:-1;background:var(--color-copper-deep);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-normal) var(--ease-out-quint);}.ds-hero__btn:hover::before,.ds-hero__btn:focus-visible::before{transform:scaleX(1);}.ds-hero__btn:focus-visible,.ds-hero__link:focus-visible{outline:2px solid var(--color-copper-line);outline-offset:3px;}.ds-hero__link{position:relative;color:#fff;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-weight:600;text-decoration:none;}.ds-hero__link::after{content:\"\";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--color-copper-line);transform:scaleX(0);transform-origin:right;transition:transform var(--dur-normal) var(--ease-out-quint);}.ds-hero__link:hover::after{transform:scaleX(1);transform-origin:left;}.ds-hero__cue{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:32px;font-family:'Martian Mono',ui-monospace,Menlo,monospace;font-size:0.625rem;color:var(--color-on-navy-2);}.ds-hero__cue i{display:block;width:1px;height:32px;background:linear-gradient(to bottom,var(--color-gold),transparent);}"
+    },
+    {
+      "name": "Quiet Link",
+      "kind": "button",
+      "refersTo": "nav-link",
+      "description": "Secondary action beside a copper button; a copper-line underline grows from the left on hover.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-quiet\" href=\"#\">Explore products</a></div>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-dark{background:var(--color-graphite);padding:24px;}.ds-quiet{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;position:relative;color:#fff;font-weight:600;font-size:1rem;text-decoration:none;}.ds-quiet::after{content:\"\";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--color-copper-line);transform:scaleX(0);transform-origin:right;transition:transform var(--dur-normal) var(--ease-out-quint);}.ds-quiet:hover::after,.ds-quiet:focus-visible::after{transform:scaleX(1);transform-origin:left;}.ds-quiet:focus-visible{outline:2px solid var(--color-copper-line);outline-offset:3px;}"
+    },
+    {
+      "name": "Secondary Button (light)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Neutral outlined action on cream chapters; fills ink on hover.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">All products</a>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-btn-secondary{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;display:inline-flex;align-items:center;height:48px;padding:0 24px;border:1px solid rgba(29,22,18,0.3);color:var(--color-ink);background:transparent;font-weight:600;text-decoration:none;border-radius:0;transition:color 200ms,background-color 200ms,border-color 200ms;}.ds-btn-secondary:hover{background:var(--color-ink);border-color:var(--color-ink);color:var(--color-paper);}.ds-btn-secondary:focus-visible{outline:2px solid var(--color-copper-line);outline-offset:3px;}"
+    },
+    {
+      "name": "Lot Tag",
+      "kind": "custom",
+      "refersTo": "lot-tag",
+      "description": "The signature stamp on product and story photographs: mono code, element and purity, grade, 1px seams, espresso at 80%.",
+      "html": "<div class=\"ds-plate\"><dl class=\"ds-lot-tag\"><div class=\"ds-lot-tag__code\"><dd>CU-CAT-A</dd></div><div class=\"ds-lot-tag__row\"><div><dd>Cu ≥ 99.9935%</dd></div><div class=\"ds-lot-tag__grade\"><dd>LME Grade A</dd></div></div></dl></div>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-plate{position:relative;height:180px;background:linear-gradient(135deg,#6b3a24,#2a1a12 60%,#17110e);}.ds-lot-tag{position:absolute;left:16px;bottom:16px;margin:0;border:1px solid rgba(255,255,255,0.45);background:rgba(23,17,14,0.8);color:#fff;font-family:'Martian Mono',ui-monospace,Menlo,monospace;font-size:0.75rem;line-height:1.5;letter-spacing:0.01em;font-variant-numeric:tabular-nums;}.ds-lot-tag dd{margin:0;}.ds-lot-tag__code{padding:6px 12px;border-bottom:1px solid rgba(255,255,255,0.25);}.ds-lot-tag__row{display:flex;}.ds-lot-tag__row>div{padding:6px 12px;}.ds-lot-tag__grade{border-left:1px solid rgba(255,255,255,0.25);color:var(--color-alu);}"
+    },
+    {
+      "name": "Procurement Field (dark)",
+      "kind": "input",
+      "refersTo": "field-dark",
+      "description": "Bottom-rule field on espresso with a mono label; a copper-line draws in on focus.",
+      "html": "<div class=\"ds-dark\"><label class=\"ds-label\" for=\"ds-f\">Company *</label><div class=\"ds-field\"><input id=\"ds-f\" class=\"ds-input\" placeholder=\"Company name\"><span class=\"ds-field__line\"></span></div></div>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-dark{background:var(--color-graphite-2);padding:24px;}.ds-label{display:block;color:var(--color-steel);font-family:'Martian Mono',ui-monospace,Menlo,monospace;font-size:0.75rem;line-height:1.5;letter-spacing:0.01em;font-variant-numeric:tabular-nums;}.ds-field{position:relative;margin-top:8px;}.ds-input{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;width:100%;background:transparent;border:0;border-bottom:1px solid var(--color-graphite-rule);padding:4px 0 12px;font-size:1rem;color:var(--color-on-navy);outline:none;transition:border-color 200ms;}.ds-input::placeholder{color:var(--color-steel);}.ds-input:hover{border-color:var(--color-steel);}.ds-field__line{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--color-copper-line);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-normal) var(--ease-out-quint);pointer-events:none;}.ds-field:focus-within .ds-field__line{transform:scaleX(1);}"
+    },
+    {
+      "name": "Field (light)",
+      "kind": "input",
+      "refersTo": "field-light",
+      "description": "Boxed square field on cream for inner-page forms.",
+      "html": "<input class=\"ds-field-light\" placeholder=\"E-mail\">",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-field-light{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;width:100%;max-width:360px;border:1px solid var(--color-rule-strong);background:var(--color-paper);padding:12px 14px;font-size:1rem;color:var(--color-ink);border-radius:0;transition:border-color 200ms,box-shadow 200ms;}.ds-field-light::placeholder{color:rgba(107,95,86,0.8);}.ds-field-light:hover{border-color:var(--color-ink-3);}.ds-field-light:focus{outline:none;border-color:var(--color-copper);box-shadow:0 0 0 3px rgba(180,83,42,0.15);}"
+    },
+    {
+      "name": "Material Option",
+      "kind": "chip",
+      "refersTo": "rq-option",
+      "description": "Seamed grid of square material choices in the procurement form.",
+      "html": "<div class=\"ds-opts\"><label class=\"ds-opt is-on\"><span class=\"ds-opt__code\">CU-CAT-A</span><span>Copper Cathode</span></label><label class=\"ds-opt\"><span class=\"ds-opt__code\">AL-P1020</span><span>Aluminium Ingot</span></label></div>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-opts{display:grid;grid-template-columns:1fr 1fr;border-left:1px solid var(--color-graphite-rule);border-top:1px solid var(--color-graphite-rule);}.ds-opt{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:6.5rem;padding:16px;border-right:1px solid var(--color-graphite-rule);border-bottom:1px solid var(--color-graphite-rule);background:var(--color-graphite-2);color:var(--color-on-navy-2);font-weight:600;cursor:pointer;transition:background-color 200ms,color 200ms;}.ds-opt:hover,.ds-opt.is-on{background:var(--color-graphite-3);color:#fff;}.ds-opt__code{color:var(--color-steel);font-weight:400;font-family:'Martian Mono',ui-monospace,Menlo,monospace;font-size:0.75rem;line-height:1.5;letter-spacing:0.01em;font-variant-numeric:tabular-nums;}.ds-opt.is-on .ds-opt__code{color:var(--color-copper-light);}.ds-opt.is-on::after{content:\"\";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--color-copper-line);}"
+    },
+    {
+      "name": "Segmented Control (light)",
+      "kind": "chip",
+      "refersTo": "segmented-light-active",
+      "description": "Adjacent square toggles, as in the LME copper/aluminium switch.",
+      "html": "<div class=\"ds-seg\"><button class=\"is-on\">Copper</button><button>Aluminium</button></div>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-seg{display:flex;}.ds-seg button{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;height:40px;padding:0 16px;margin-left:-1px;border:1px solid var(--color-rule-strong);background:transparent;color:var(--color-ink-2);font-size:0.9375rem;font-weight:600;cursor:pointer;transition:color 200ms,border-color 200ms,background-color 200ms;}.ds-seg button:first-child{margin-left:0;}.ds-seg button:hover{color:var(--color-ink);border-color:var(--color-ink);}.ds-seg button.is-on{background:var(--color-ink);border-color:var(--color-ink);color:var(--color-paper);}.ds-seg button:focus-visible{outline:2px solid var(--color-copper-line);outline-offset:3px;}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Espresso nav bar (the whole header) with quiet links, copper-line underline on hover and current page, mono language switch.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav__logo\">ARAN METAL</span><div class=\"ds-nav__links\"><a href=\"#\" aria-current=\"page\">Products</a><a href=\"#\">Logistics</a><a href=\"#\">About</a></div><span class=\"ds-nav__lang\"><b>TR</b> | EN</span></nav>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-nav{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:32px;height:72px;padding:0 32px;background:rgba(23,17,14,0.95);border-bottom:1px solid var(--color-graphite-rule);}.ds-nav__logo{color:#fff;font-family:var(--font-serif);font-weight:500;letter-spacing:0.08em;font-size:1rem;}.ds-nav__links{display:flex;gap:32px;}.ds-nav__links a{position:relative;color:var(--color-on-navy-2);font-size:0.9375rem;font-weight:500;text-decoration:none;transition:color 200ms;}.ds-nav__links a:hover,.ds-nav__links a[aria-current]{color:#fff;}.ds-nav__links a::after{content:\"\";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--color-copper-line);transform:scaleX(0);transform-origin:right;transition:transform var(--dur-normal) var(--ease-out-quint);}.ds-nav__links a:hover::after,.ds-nav__links a[aria-current]::after{transform:scaleX(1);transform-origin:left;}.ds-nav__lang{color:var(--color-steel);font-family:'Martian Mono',ui-monospace,Menlo,monospace;font-size:0.75rem;line-height:1.5;letter-spacing:0.01em;font-variant-numeric:tabular-nums;text-transform:uppercase;}.ds-nav__lang b{color:#fff;font-weight:400;}"
+    },
+    {
+      "name": "Market Strip",
+      "kind": "custom",
+      "refersTo": "market-ticker",
+      "description": "Fixed 44px bottom bar: gold label with delayed-reference note, broker CFD and FX ticker tape (not LME), live Istanbul clock.",
+      "html": "<aside class=\"ds-tick\"><div class=\"ds-tick__brand\"><span class=\"ds-tick__label\"><i></i>Aran Markets</span><span class=\"ds-tick__note\">Reference · delayed · not LME</span></div><div class=\"ds-tick__tape\"><span>Copper · USD/lb</span><span>Aluminium · USD/t</span><span>Nickel · USD/t</span><span>USD/TRY</span><span>EUR/TRY</span></div><div class=\"ds-tick__clock\"><span class=\"ds-dim\">Tue 07 Oct</span><time>14:32:08</time><span class=\"ds-dim\">IST</span></div></aside>",
+      "css": ":host{--color-copper:#b4532a;--color-copper-deep:#8f3e1d;--color-copper-line:#c9783f;--color-copper-light:#e09a6a;--color-gold:#d2ae5a;--color-graphite:#17110e;--color-graphite-2:#201713;--color-graphite-3:#2b201b;--color-graphite-rule:#3a2d26;--color-steel:#a89a8e;--color-alu:#d8ccbf;--color-bone:#f3ece2;--color-on-navy:#f1ebe3;--color-on-navy-2:#b5a99d;--color-paper:#f8f4ee;--color-ink:#1d1612;--color-ink-2:#4d433c;--color-ink-3:#6b5f56;--color-rule:#ddd3c5;--color-rule-strong:#b9ac9b;--font-serif:'EB Garamond','Iowan Old Style',Georgia,serif;--ease-out-quint:cubic-bezier(0.22,1,0.36,1);--ease-out-quart:cubic-bezier(0.25,1,0.5,1);--dur-fast:200ms;--dur-normal:420ms;}.ds-tick{display:flex;align-items:stretch;height:44px;background:rgba(23,17,14,0.95);border-top:1px solid var(--color-graphite-rule);color:var(--color-on-navy-2);font-family:'Martian Mono',ui-monospace,Menlo,monospace;}.ds-tick__brand{display:flex;flex-direction:column;justify-content:center;padding:0 20px 0 16px;border-right:1px solid var(--color-graphite-rule);white-space:nowrap;}.ds-tick__label{display:flex;align-items:center;gap:8px;font-size:0.625rem;color:var(--color-gold);}.ds-tick__label i{display:block;width:6px;height:6px;background:var(--color-gold);}.ds-tick__note{font-size:0.5625rem;color:var(--color-steel);}.ds-tick__tape{flex:1;min-width:0;display:flex;align-items:center;gap:28px;padding:0 20px;overflow:hidden;white-space:nowrap;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:0.8125rem;}.ds-tick__tape span{transition:color 200ms;}.ds-tick__tape span:hover{color:#fff;}.ds-tick__clock{display:flex;align-items:center;gap:12px;padding:0 16px 0 20px;border-left:1px solid var(--color-graphite-rule);font-size:0.6875rem;white-space:nowrap;}.ds-tick__clock time{color:#fff;font-variant-numeric:tabular-nums;}.ds-dim{color:var(--color-steel);text-transform:uppercase;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Trading House Review",
+    "overview": "The site reads like the annual review of an old metal trading house: a classical serif headline set large on cream paper or on warm espresso, the material photographed close beneath a burgundy-espresso veil, and the lot documentation (codes, purities, standards) printed beside it in a narrow mono. Espresso chapters carry material (the hero, the lot rail, the supply route, the procurement request, the footer); cream chapters carry specification (the LME pricing mechanism, the specification ledger, the company story). A fixed market strip along the bottom edge keeps the trading floor in view on every page, labelled as a delayed reference rather than a price.\n\nThe system is square, flat and composed. Depth comes from the photograph and from tonal steps of espresso, not from shadows or cards. EB Garamond at a single book weight (500) is the heading voice everywhere; Archivo at normal width carries reading text, buttons and navigation; Martian Mono is reserved for lot data. Copper, the colour of the logo and the product, appears once per view as the call to act or as the LME curve. Gold is the editorial emphasis: the last line of the hero headline, the market strip's label, the scroll cue and Türkiye on the supply map. Motion is cinematic but bounded: one opening sequence on the hero, scroll-bound handoffs between chapters, and a complete reduced-motion path.\n\nThis world is modelled on the look of an international trading-group site (inspiration, not a copy). It replaces the earlier \"Stamped Lot\" world of graphite, bone and expanded Archivo display. It refuses the left-text/right-stock-photo hero, card grids, glowing \"foundry\" gradients, SaaS and crypto styling, neon and glass effects, and any cool grey or blue.",
+    "keyCharacteristics": [
+      "Warm espresso material chapters alternating with cream specification chapters.",
+      "EB Garamond 500 for every headline; Archivo for reading and UI; Martian Mono only for lot data.",
+      "One copper per view (button or LME curve); gold only for emphasis words, the ticker label, the scroll cue and Türkiye on the map.",
+      "Centered hero: large serif headline with its last line in gold, uppercase tracked copper button beside a quiet text link.",
+      "A fixed 44px market strip at the bottom: gold label, delayed reference quotes, live Istanbul clock.",
+      "The lot tag (mono code / element and purity / grade, 1px seams, espresso at 80%) stamped onto photographs.",
+      "Square corners everywhere (0px), 1px hairline seams, tabular lining figures.",
+      "No offer prices; the strip is labelled reference, delayed, not LME; the LME line is illustrative."
+    ],
+    "rules": [
+      {
+        "name": "The One Copper Rule",
+        "body": "Each view carries one copper statement: the copper button, or the LME curve. Gold is not a second statement; it marks emphasis words (the gold last line of the hero), the market strip label, the scroll cue and Türkiye on the map, and nothing else. Copper-line hairlines that answer state (hover underline, focus ring, field focus line) are transient feedback.",
+        "section": "colors"
+      },
+      {
+        "name": "The Kept Names Rule",
+        "body": "The legacy token names (paper, ink, navy, on-navy, navy-rule, graphite, steel, alu, copper) are kept and re-valued so inner pages inherit the world without rewrites. \"navy\" and \"graphite\" now both mean warm espresso (navy = graphite = #17110e family). Do not reintroduce a blue or a cool grey.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Price Rule",
+        "body": "No offer price, live or sample, appears in content. The market strip carries third-party broker CFD and FX quotes, always labelled as a delayed reference that is not LME. The LME line is a seeded illustrative walk and its caption says so.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lot Data Rule",
+        "body": "Martian Mono is only for lot data and instrument readouts: product codes, element and purity lines, standards (ASTM B115, EN 1978, LME Grade A, P1020), coordinates, contract names, chart captions, field labels, the market strip label and clock. It never decorates, never sets a headline, never sets a sentence of prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Eyebrow Rule",
+        "body": "No eyebrows or kickers above headings. A chapter opens with its headline. The product code lives in the purity data line under the figure (`Cu · minimum · CU-CAT-A`) and in the lot tag, not above the name.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every figure (purity, quantity, phone, ledger numbers, rail counter, the Istanbul clock) is set with tabular lining numerals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Seam Rule",
+        "body": "Surfaces separate by tone and 1px seams, never by shadow or card. Light reflections (the warm hero light band, the lot cursor light) are overlay-blended highlights on the metal, not elevation.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Rest State Rule",
+        "body": "All content is visible by default; motion is decoration on top. Under prefers-reduced-motion every keyframe is removed, the hero sweep is hidden, the video is replaced by the image, the plate and copy do not inset, the rail becomes a free horizontal list, the LME line and route arcs are drawn at rest, the chain is full, and transitions collapse to 1ms.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do alternate espresso material chapters with cream specification chapters.",
+      "Do set every headline in EB Garamond at 500; leave weight and tracking to the display voice.",
+      "Do keep one copper statement per view: the copper button or the LME curve.",
+      "Do keep gold to emphasis words, the market strip label, the scroll cue and Türkiye on the map.",
+      "Do label the market strip as a delayed reference that is not LME, in both languages.",
+      "Do stamp the lot tag (mono code / element and purity / grade, 1px seams, espresso at 80%) onto product and story photographs.",
+      "Do set every code, purity, standard, coordinate, field label and instrument readout in Martian Mono, and nothing else.",
+      "Do keep all corners square (0px) and separate surfaces with 1px seams.",
+      "Do use tabular lining figures for every number.",
+      "Do reserve 44px at the bottom of every page for the market strip.",
+      "Do use the kept token names (paper, ink, navy, graphite, on-navy, copper) on inner pages so they inherit this world.",
+      "Do ship a reduced-motion path where everything is visible at rest."
+    ],
+    "donts": [
+      "Don't publish an offer price, live or sample, or present the strip's quotes as LME prices.",
+      "Don't put eyebrows or kickers above headings; the product code belongs in the purity data line and the lot tag.",
+      "Don't use Martian Mono for decoration, headlines or prose.",
+      "Don't use gold as a fill, a button or a second call to act; don't add a second copper statement to a view.",
+      "Don't return to expanded heavy Archivo for headlines; the heading voice is the serif.",
+      "Don't use rounded corners, cards with shadows, glass, glow, neon or gradient text.",
+      "Don't reintroduce navy, blue or cool grey; the navy and graphite token names now hold warm espresso.",
+      "Don't build a left-text/right-stock-photo hero or a card grid of products.",
+      "Don't invent certificates, client references or volume figures to fill a ledger."
+    ]
+  }
+}
