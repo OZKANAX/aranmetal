@@ -97,7 +97,11 @@ export function Hero({
   }, [active, visible]);
 
   const onProgress = useCallback((p: number) => {
-    plateRef.current?.style.setProperty("--p", p.toFixed(4));
+    const plate = plateRef.current;
+    if (plate) {
+      plate.style.setProperty("--p", p.toFixed(4));
+      plate.dataset.scrolled = String(p > 0.001);
+    }
     copyRef.current?.style.setProperty("--p", p.toFixed(4));
   }, []);
   useScrollProgress(sectionRef, onProgress, { enabled: !reduced, mode: "exit" });
@@ -125,7 +129,7 @@ export function Hero({
       onFocusCapture={() => setHold(true)}
       onBlurCapture={() => setHold(false)}
     >
-      <div ref={plateRef} className="hero-plate absolute inset-0 will-change-transform">
+      <div ref={plateRef} className="hero-plate absolute inset-0">
         <div className="hero-intro absolute inset-0">
           {slides.map((s, i) => (
             <div key={s.id} className="hero-slide absolute inset-0" data-active={i === active} aria-hidden="true">
