@@ -43,7 +43,7 @@ export function SiteHeader({
           locale={locale}
           labels={{ menu: dict.nav.menu, close: dict.nav.close }}
           quote={{ href: quoteHref(locale), label: dict.nav.quote }}
-          contact={{ phone: general.phone, email: general.email }}
+          contact={{ phone: general.phone, officePhone: general.officePhone, email: general.email }}
         />
       </div>
     </HeaderFrame>

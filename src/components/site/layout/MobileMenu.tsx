@@ -20,7 +20,7 @@ export function MobileMenu({
   locale: Locale;
   labels: { menu: string; close: string };
   quote: { href: string; label: string };
-  contact: { phone: string; email: string };
+  contact: { phone: string; officePhone?: string; email: string };
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -118,6 +118,11 @@ export function MobileMenu({
 
             <div className="mt-auto pt-10 flex items-end justify-between gap-6">
               <div className="flex flex-col gap-1 text-small">
+                {contact.officePhone && (
+                  <a href={`tel:${contact.officePhone.replace(/[^\d+]/g, "")}`} className="tnum text-white py-1">
+                    {contact.officePhone}
+                  </a>
+                )}
                 <a href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`} className="tnum text-white py-1">
                   {contact.phone}
                 </a>

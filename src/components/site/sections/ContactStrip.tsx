@@ -10,7 +10,10 @@ export function ContactStrip({
   general: SectionContent<"general">;
   dict: Dictionary;
 }) {
-  const tel = general.phone.replace(/[^\d+]/g, "");
+  const phones = [
+    { label: dict.contact.officePhone, value: general.officePhone },
+    { label: dict.contact.phone, value: general.phone },
+  ].filter((p) => p.value);
 
   return (
     <section className="w-full bg-paper pt-16 lg:pt-20 pb-16 lg:pb-20" id="contact">
@@ -22,9 +25,16 @@ export function ContactStrip({
             </a>
           </Item>
           <Item label={dict.contact.phoneLabel}>
-            <a className="tnum hover:text-copper transition-colors" href={`tel:${tel}`}>
-              {general.phone}
-            </a>
+            <span className="flex flex-col gap-3">
+              {phones.map((p) => (
+                <span key={p.label} className="flex flex-col">
+                  <span className="text-caption font-normal text-ink-3">{p.label}</span>
+                  <a className="tnum hover:text-copper transition-colors" href={`tel:${p.value.replace(/[^\d+]/g, "")}`}>
+                    {p.value}
+                  </a>
+                </span>
+              ))}
+            </span>
           </Item>
           <Item label={dict.contact.addressLabel}>
             <address className="not-italic text-body font-normal text-ink-2">{general.address}</address>

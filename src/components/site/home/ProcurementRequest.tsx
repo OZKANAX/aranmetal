@@ -21,6 +21,9 @@ export function ProcurementRequest({
 }) {
   const l = dict.landing;
   const contacts = [
+    ...(general.officePhone
+      ? [{ term: dict.contact.officePhone, value: general.officePhone, href: `tel:${general.officePhone.replace(/[^\d+]/g, "")}` }]
+      : []),
     { term: dict.contact.phone, value: general.phone, href: `tel:${general.phone.replace(/[^\d+]/g, "")}` },
     { term: dict.contact.email, value: general.email, href: `mailto:${general.email}` },
     { term: dict.contact.address, value: general.address },

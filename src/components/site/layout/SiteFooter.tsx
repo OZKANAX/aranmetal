@@ -120,10 +120,22 @@ export function SiteFooter({
           <FooterFact term={dict.contact.address}>
             <address className="not-italic">{general.address}</address>
           </FooterFact>
-          <FooterFact term={dict.contact.phone}>
-            <a href={`tel:${general.phone.replace(/[^\d+]/g, "")}`} className="tnum hover:text-copper-light transition-colors">
-              {general.phone}
-            </a>
+          <FooterFact term={dict.contact.phoneLabel}>
+            <span className="flex flex-col gap-1">
+              {[
+                { label: dict.contact.officePhone, value: general.officePhone },
+                { label: dict.contact.phone, value: general.phone },
+              ]
+                .filter((p) => p.value)
+                .map((p) => (
+                  <span key={p.label}>
+                    <span className="text-steel">{p.label}: </span>
+                    <a href={`tel:${p.value.replace(/[^\d+]/g, "")}`} className="tnum hover:text-copper-light transition-colors">
+                      {p.value}
+                    </a>
+                  </span>
+                ))}
+            </span>
           </FooterFact>
           <FooterFact term={dict.contact.email}>
             <a href={`mailto:${general.email}`} className="hover:text-copper-light transition-colors">

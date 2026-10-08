@@ -60,6 +60,7 @@ export const sections = {
       companyTagline: t("Logo Altı Slogan", "Metalurji & Sanayi A.Ş.", "Metallurgy & Industry Inc."),
       email: plain("E-posta", "info@aranmetal.com"),
       phone: plain("Telefon", "+90 533 969 3039"),
+      officePhone: plain("Ofis Telefonu", "+90 212 823 6776"),
       address: t(
         "Adres",
         "42 Maslak Multi Ofis 15/12, Maslak / Sarıyer / İstanbul",

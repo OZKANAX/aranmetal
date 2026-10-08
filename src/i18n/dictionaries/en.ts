@@ -69,6 +69,7 @@ const en: Dictionary = {
     email: "E-Mail",
     emailLabel: "Official Correspondence",
     phone: "Phone",
+    officePhone: "Office Phone",
     phoneLabel: "Contact Line",
     address: "Headquarters",
     addressLabel: "Office Address",

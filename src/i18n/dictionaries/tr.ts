@@ -68,6 +68,7 @@ const tr = {
     email: "E-Posta",
     emailLabel: "Resmi Yazışma",
     phone: "Telefon",
+    officePhone: "Ofis Telefonu",
     phoneLabel: "İletişim Hattı",
     address: "Merkez",
     addressLabel: "Ofis Adresimiz",
