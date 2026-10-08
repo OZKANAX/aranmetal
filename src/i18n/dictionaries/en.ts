@@ -115,6 +115,8 @@ const en: Dictionary = {
     ],
     tickerLabel: "Reference · delayed · not LME",
     tickerBrand: "Aran Markets",
+    whatsappLabel: "Chat on WhatsApp",
+    whatsappMessage: "Hello, I'd like to request a quote.",
     heroScroll: "Go to the materials",
     railTitle: "The materials, lot by lot.",
     railIntro:

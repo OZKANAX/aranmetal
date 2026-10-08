@@ -114,6 +114,8 @@ const tr = {
     ],
     tickerLabel: "Referans · gecikmeli · LME değil",
     tickerBrand: "Aran Piyasalar",
+    whatsappLabel: "WhatsApp ile yazın",
+    whatsappMessage: "Merhaba, teklif almak istiyorum.",
     heroScroll: "Malzemelere geç",
     railTitle: "Malzemeler, parti parti.",
     railIntro:

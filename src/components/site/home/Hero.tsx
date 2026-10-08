@@ -250,7 +250,7 @@ export function Hero({
               type="button"
               onClick={() => setPaused((v) => !v)}
               aria-label={paused ? labels.play : labels.pause}
-              className="w-10 h-10 flex items-center justify-center border border-white/25 text-white hover:bg-white hover:text-ink transition-colors"
+              className="w-10 h-10 mr-[4.5rem] sm:mr-16 lg:mr-12 flex items-center justify-center border border-white/25 text-white hover:bg-white hover:text-ink transition-colors"
             >
               <Icon name={paused ? "play_arrow" : "pause"} className="text-[20px]" />
             </button>

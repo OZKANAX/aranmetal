@@ -10,6 +10,7 @@ import { SupplyRoute } from "@/components/site/home/SupplyRoute";
 import { SpecLedger } from "@/components/site/home/SpecLedger";
 import { CompanyStory } from "@/components/site/home/CompanyStory";
 import { ProcurementRequest } from "@/components/site/home/ProcurementRequest";
+import { WhatsAppButton } from "@/components/site/ui/WhatsAppButton";
 
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
@@ -177,6 +178,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           ...(products.some((p) => p.category === "plastic") ? [] : [{ value: dict.categories.plastic, code: "PLASTIC" }]),
         ]}
       />
+      <WhatsAppButton number={general.whatsapp} label={l.whatsappLabel} message={l.whatsappMessage} />
     </>
   );
 }
