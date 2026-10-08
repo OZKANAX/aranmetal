@@ -8,6 +8,7 @@ import { getFooterPages, getSection } from "@/lib/content/queries";
 import { SiteHeader } from "@/components/site/layout/SiteHeader";
 import { SiteFooter } from "@/components/site/layout/SiteFooter";
 import { MarketTicker } from "@/components/site/layout/MarketTicker";
+import { WhatsAppButton } from "@/components/site/ui/WhatsAppButton";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -62,6 +63,7 @@ export default async function SiteLayout({ children, params }: LayoutProps<"/[lo
         <main className="w-full pt-[var(--header-h)] bg-paper min-h-[calc(100vh-80px)] flex flex-col">{children}</main>
         <SiteFooter locale={locale} dict={dict} general={general} categories={categories} legalPages={legalPages} />
         <MarketTicker locale={locale} label={dict.landing.tickerBrand} note={dict.landing.tickerLabel} />
+        <WhatsAppButton number={general.whatsapp} label={dict.landing.whatsappLabel} message={dict.landing.whatsappMessage} />
       </body>
     </html>
   );
