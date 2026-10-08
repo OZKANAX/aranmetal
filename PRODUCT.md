@@ -31,7 +31,7 @@ Aran Metal Sanayi ve Ticaret A.Ş.'nin kurumsal web sitesi. Bakır katot, alümi
 - Ürün kategorileri: bakır, alüminyum, alaşımlar.
 - Hedef pazarlar (yön): Türkiye merkez; Avrupa, Orta Doğu, Kuzey Afrika, Orta Asya.
 - Fiyat ve stok teklif aşamasında teyit edilir; teklif fiyatı sitede yayınlanmaz.
-- Ekranın altına sabit TradingView ücretsiz şeridi (kullanıcı kararı, 2026-10-07): bakır/alüminyum/nikel broker CFD kotasyonları ve USD/TRY, EUR/TRY, EUR/USD. Gecikmeli, LME değildir ve öyle etiketlenir. LME resmi verisi lisans gerektirir.
+- Ekranın altına sabit piyasa şeridi (kullanıcı kararı, 2026-10-08): LME bakır, alüminyum, nikel, çinko, kurşun (USD/ton) ve USD/TRY, EUR/TRY, EUR/USD; kaynak Metals.Dev API (lisanslı), sunucuda 8 saatte bir yenilenir, "gecikmeli referans" olarak etiketlenir. Libre (USD/lb) gösterilmez. Investing.com sayfası parse edilmez (kullanım koşulları ve bot koruması).
 
 ## Brand Commitments
 
@@ -44,7 +44,7 @@ Aran Metal Sanayi ve Ticaret A.Ş.'nin kurumsal web sitesi. Bakır katot, alümi
 - Ürün ve atölye fotoğrafları: `aran-metal/public/images/`.
 - Seed içerikleri: ürün açıklamaları, KVKK/gizlilik metinleri (örnek metin olarak işaretli).
 - "30+ yıllık tecrübe" kullanıcı tarafından doğrulandı (2026-10-07); kuruluş yılı bilinmiyor.
-- LME fiyat API'si yok: teklif fiyatı sitede gösterilmez; LME bölümü fiyatın nasıl oluştuğunu anlatır, grafik çizgisi temsili olarak etiketlenir. Tek istisna alttaki TradingView referans şerididir (gecikmeli, LME değil).
+- LME fiyat API'si yok: teklif fiyatı sitede gösterilmez; LME bölümü fiyatın nasıl oluştuğunu anlatır, grafik çizgisi temsili olarak etiketlenir. Tek istisna alttaki LME referans şerididir (gecikmeli).
 - Mevcut görseller yapay zekâ ile üretilmiş ve bazılarında "ARAN METAL" etiketleri ile tarayıcı çubuğu kalıntıları var; gerçek fotoğrafla değiştirilmeleri önerilir.
 - Müşteri referansları, sertifika belgeleri, ciro/hacim rakamları sitede yok; uydurulmamalı.
 

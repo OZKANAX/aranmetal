@@ -1,85 +1,81 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Locale } from "@/i18n/config";
+import type { MarketData } from "@/lib/market";
 
-// TradingView'in ücretsiz gömülü şeridinde veri veren semboller (COMEX ve LME semboller ücretsiz gömmede kapalı).
-// Bunlar broker CFD kotasyonlarıdır; LME resmi fiyatı değildir ve gecikmeli olabilir.
-const SYMBOLS = {
-  tr: [
-    { proName: "CAPITALCOM:COPPER", title: "Bakır · USD/lb" },
-    { proName: "CAPITALCOM:ALUMINUM", title: "Alüminyum · USD/t" },
-    { proName: "CAPITALCOM:NICKEL", title: "Nikel · USD/t" },
-    { proName: "FX_IDC:USDTRY", title: "USD/TRY" },
-    { proName: "FX_IDC:EURTRY", title: "EUR/TRY" },
-    { proName: "FX:EURUSD", title: "EUR/USD" },
-  ],
-  en: [
-    { proName: "CAPITALCOM:COPPER", title: "Copper · USD/lb" },
-    { proName: "CAPITALCOM:ALUMINUM", title: "Aluminium · USD/t" },
-    { proName: "CAPITALCOM:NICKEL", title: "Nickel · USD/t" },
-    { proName: "FX_IDC:USDTRY", title: "USD/TRY" },
-    { proName: "FX_IDC:EURTRY", title: "EUR/TRY" },
-    { proName: "FX:EURUSD", title: "EUR/USD" },
-  ],
+type Labels = {
+  brand: string;
+  note: string;
+  updated: string;
+  unit: string;
+  metals: Record<string, string>;
 };
 
 /**
- * Ekranın altına sabit piyasa şeridi: solda marka etiketi ve "gecikmeli referans" notu,
- * ortada TradingView ticker tape, sağda İstanbul saati. Widget tarayıcı boştayken yüklenir.
+ * Ekranın altına sabit piyasa şeridi: solda marka ve kaynak notu, ortada akan LME fiyatları
+ * (USD/ton) ve kurlar, sağda İstanbul saati. Veri sunucuda alınır ve önbelleğe konur;
+ * bu bileşen yalnız gösterir. Üzerine gelince akış durur; hareketi azalt tercihinde akmaz.
  */
-export function MarketTicker({ locale, label, note }: { locale: Locale; label: string; note: string }) {
-  const ref = useRef<HTMLDivElement>(null);
+export function MarketTicker({ locale, data, labels }: { locale: Locale; data: MarketData; labels: Labels }) {
+  const tag = locale === "tr" ? "tr-TR" : "en-GB";
+  const metal = new Intl.NumberFormat(tag, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  const fx = new Intl.NumberFormat(tag, { minimumFractionDigits: 4, maximumFractionDigits: 4 });
 
-  useEffect(() => {
-    const host = ref.current;
-    if (!host) return;
-    const load = () => {
-      if (host.querySelector("script")) return;
-      const script = document.createElement("script");
-      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
-      script.async = true;
-      script.innerHTML = JSON.stringify({
-        symbols: SYMBOLS[locale],
-        showSymbolLogo: false,
-        isTransparent: true,
-        displayMode: "compact",
-        colorTheme: "dark",
-        locale: locale === "tr" ? "tr" : "en",
-      });
-      host.appendChild(script);
-    };
-    const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1200));
-    const id = idle(load);
-    return () => {
-      if (window.cancelIdleCallback && typeof id === "number") window.cancelIdleCallback(id);
-      host.innerHTML = '<div class="tradingview-widget-container__widget"></div>';
-    };
-  }, [locale]);
+  const updated = data.updatedAt
+    ? new Date(data.updatedAt).toLocaleString(tag, {
+        timeZone: "Europe/Istanbul",
+        day: "2-digit",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    : null;
+
+  const items = data.items.map((it) => (
+    <li key={it.key} className="flex items-baseline gap-2 px-5 whitespace-nowrap border-r border-graphite-rule">
+      <span className="text-[0.6875rem] text-on-navy-2">
+        {it.kind === "metal" ? `LME ${labels.metals[it.label] ?? it.label}` : it.label}
+      </span>
+      <span className="font-mono text-[0.75rem] text-white tnum">
+        {it.kind === "metal" ? metal.format(it.value) : fx.format(it.value)}
+      </span>
+      {it.kind === "metal" && <span className="font-mono text-[0.625rem] text-steel">{labels.unit}</span>}
+    </li>
+  ));
 
   return (
     <aside
-      aria-label={label}
+      aria-label={labels.brand}
       className="fixed inset-x-0 bottom-0 z-40 flex h-[var(--ticker-h)] items-stretch bg-graphite/95 border-t border-graphite-rule text-on-navy-2"
     >
       <div className="hidden md:flex shrink-0 flex-col justify-center pl-4 sm:pl-8 lg:pl-12 pr-5 border-r border-graphite-rule">
         <span className="flex items-center gap-2 font-mono text-[0.625rem] text-gold whitespace-nowrap">
           <span aria-hidden="true" className="w-1.5 h-1.5 bg-gold" />
-          {label}
+          {labels.brand}
         </span>
-        <span className="font-mono text-[0.5625rem] text-steel whitespace-nowrap">{note}</span>
+        <span className="font-mono text-[0.5625rem] text-steel whitespace-nowrap">
+          {labels.note}
+          {updated ? ` · ${labels.updated} ${updated}` : ""}
+        </span>
       </div>
-      <div className="relative min-w-0 flex-1 overflow-hidden">
-        <div ref={ref} className="tradingview-widget-container h-[var(--ticker-h)]">
-          <div className="tradingview-widget-container__widget" />
+
+      {/* Akan liste: aynı liste iki kez dizilir, yarısı kadar kaydırılınca kesintisiz döner */}
+      <div className="market-marquee relative min-w-0 flex-1 overflow-hidden">
+        <div className="market-track flex h-full w-max items-center">
+          <ul className="flex items-center">{items}</ul>
+          <ul className="flex items-center" aria-hidden="true">
+            {items}
+          </ul>
         </div>
       </div>
+
       <IstanbulClock locale={locale} />
     </aside>
   );
 }
 
-/** İstanbul saati (Europe/Istanbul). Sunucuda boş çizilir, istemcide dakikada bir değil saniyede bir güncellenir. */
+/** İstanbul saati (Europe/Istanbul). Sunucuda boş çizilir, istemcide saniyede bir güncellenir. */
 function IstanbulClock({ locale }: { locale: Locale }) {
   const [now, setNow] = useState<Date | null>(null);
   useEffect(() => {

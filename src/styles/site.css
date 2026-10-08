@@ -88,8 +88,8 @@
   --dur-fast: 200ms;
   --dur-normal: 420ms;
   --dur-cinematic: 900ms;
-  /* Menü çubuğu üstte; piyasa şeridi ekranın altına sabittir. */
-  --ticker-h: 44px;
+  /* Menü çubuğu üstte; piyasa şeridi (veri varsa) ekranın altına sabittir. */
+  --ticker-h: 0px;
   --nav-h: 72px;
   --header-h: var(--nav-h);
 }
@@ -286,6 +286,36 @@
 }
 .site-header[data-compact="true"] .site-header__logo {
   transform: scale(0.88);
+}
+
+/* Piyasa şeridi yalnız veri varken yer kaplar */
+body[data-ticker="on"] {
+  --ticker-h: 44px;
+}
+
+/* Piyasa şeridi: liste iki kez dizilir, yarısı kadar kayınca kesintisiz döner */
+@keyframes market-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.market-track {
+  animation: market-scroll 45s linear infinite;
+  will-change: transform;
+}
+.market-marquee:hover .market-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .market-marquee {
+    overflow-x: auto;
+  }
+  .market-track {
+    animation: none;
+  }
 }
 
 /* Mobil menü açıkken başlık her zaman dolu zeminlidir */
