@@ -53,7 +53,7 @@ export function SiteFooter({
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-x-8 gap-y-12 py-16">
           <div className="col-span-2 md:col-span-3 lg:col-span-3 flex flex-col gap-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/logo-dark.svg" alt={general.companyName} className="h-11 w-auto self-start" />
+            <img src="/brand/logo-dark.svg" alt={general.companyName} className="h-16 w-auto self-start" />
             <p className="text-small text-on-navy-2 max-w-[38ch]">{general.footerDescription}</p>
             {socials.length > 0 && (
               <div className="flex gap-5">
