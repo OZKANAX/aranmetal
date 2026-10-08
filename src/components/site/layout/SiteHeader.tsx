@@ -24,7 +24,7 @@ export function SiteHeader({
     <HeaderFrame homeHref={`/${locale}`}>
       <Link href={`/${locale}`} className="site-header__logo shrink-0" aria-label={general.companyName}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/logo-dark.svg" alt="" className="h-[2.7rem] xl:h-12 w-auto" />
+        <img src="/brand/logo-dark.svg" alt="" className="h-[3.24rem] xl:h-[3.6rem] w-auto" />
       </Link>
 
       <NavLinks items={items} />
