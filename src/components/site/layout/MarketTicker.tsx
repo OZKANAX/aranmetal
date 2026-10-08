@@ -54,9 +54,9 @@ export function MarketTicker({ locale, data, labels }: { locale: Locale; data: M
           <span aria-hidden="true" className="w-1.5 h-1.5 bg-gold" />
           {labels.brand}
         </span>
-        <span className="font-mono text-[0.5625rem] text-steel whitespace-nowrap">
+        <span className="font-mono text-[0.5rem] text-steel whitespace-nowrap">
           {labels.note}
-          {updated ? ` · ${labels.updated} ${updated}` : ""}
+          {updated ? ` · ${updated}` : ""}
         </span>
       </div>
 

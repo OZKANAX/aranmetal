@@ -114,7 +114,7 @@ const en: Dictionary = {
           "Granular plastic raw materials handled the way we handle metal: documented lots, a clear specification and a written offer.",
       },
     ],
-    tickerLabel: "LME · delayed reference · Data: Metals.Dev",
+    tickerLabel: "LME · delayed",
     tickerUpdated: "updated",
     tickerMetals: { copper: "Copper", aluminium: "Aluminium", nickel: "Nickel", zinc: "Zinc", lead: "Lead" },
     tickerBrand: "Aran Markets",

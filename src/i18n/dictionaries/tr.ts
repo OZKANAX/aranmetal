@@ -113,7 +113,7 @@ const tr = {
           "Granül plastik hammaddelerde de metaldeki yöntem: belgeli parti, net spesifikasyon ve yazılı teklif.",
       },
     ],
-    tickerLabel: "LME · gecikmeli referans · Veri: Metals.Dev",
+    tickerLabel: "LME · gecikmeli",
     tickerUpdated: "güncelleme",
     tickerMetals: { copper: "Bakır", aluminium: "Alüminyum", nickel: "Nikel", zinc: "Çinko", lead: "Kurşun" },
     tickerBrand: "Aran Piyasalar",
