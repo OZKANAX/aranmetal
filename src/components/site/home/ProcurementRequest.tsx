@@ -42,7 +42,7 @@ export function ProcurementRequest({
           <h3 className="sr-only">{l.requestDirect}</h3>
           <dl className="mt-12 lg:mt-auto lg:pt-16 border-t border-graphite-rule">
             {contacts.map((c) => (
-              <div key={c.term} className="grid grid-cols-[6.5rem_1fr] gap-4 py-3.5 border-b border-graphite-rule text-small">
+              <div key={c.term} className="grid grid-cols-[8.75rem_1fr] gap-4 py-3.5 border-b border-graphite-rule text-small">
                 <dt className="font-mono text-data text-steel pt-0.5">{c.term}</dt>
                 <dd className="text-on-navy">
                   {c.href ? (

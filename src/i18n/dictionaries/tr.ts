@@ -67,7 +67,7 @@ const tr = {
   contact: {
     email: "E-Posta",
     emailLabel: "Resmi Yazışma",
-    phone: "Telefon",
+    phone: "Mobil / WhatsApp",
     officePhone: "Ofis Telefonu",
     phoneLabel: "İletişim Hattı",
     address: "Merkez",
