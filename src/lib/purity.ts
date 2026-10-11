@@ -3,7 +3,7 @@ import type { Locale } from "@/i18n/config";
 export type Purity = {
   /** Element simgesi, örn. "Cu" */
   element: string;
-  /** Sayısal değer, örn. "99.9935" */
+  /** Sayısal değer, örn. "99.99" ya da "99.70 / 99.80" */
   value: string;
   /** Parantez içi ek bilgi, örn. "101% IACS" */
   note: string;
@@ -11,9 +11,14 @@ export type Purity = {
 
 /** "Cu ≥ %99.9935 (101% IACS)" gibi bir saflık metnini parçalar; sayısal değilse null. */
 export function parsePurity(raw: string): Purity | null {
-  const m = raw.match(/^\s*([A-Z][a-z]?)\s*(?:≥|>=)\s*%?\s*([\d.,]+)\s*%?\s*(?:\((.*)\))?\s*$/);
+  // Tek değer ("%99.70") ya da eğik çizgiyle birden çok değer ("%99.70 / %99.80")
+  const m = raw.match(/^\s*([A-Z][a-z]?)\s*(?:≥|>=)\s*((?:%?\s*[\d.,]+\s*%?)(?:\s*\/\s*%?\s*[\d.,]+\s*%?)*)\s*(?:\((.*)\))?\s*$/);
   if (!m) return null;
-  return { element: m[1], value: m[2], note: m[3] ?? "" };
+  const value = m[2]
+    .split("/")
+    .map((v) => v.replace(/[%\s]/g, ""))
+    .join(" / ");
+  return { element: m[1], value, note: m[3] ?? "" };
 }
 
 /** Yüzde işaretini dile göre yerleştirir: TR "%99.70", EN "99.70%". */

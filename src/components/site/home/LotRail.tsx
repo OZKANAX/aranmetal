@@ -344,7 +344,7 @@ function LotFrame({
             <div className="mt-5 lg:mt-7">
               {purity ? (
                 <>
-                  <p className="font-display tnum text-[clamp(3rem,min(1.8rem+4vw,10vh),5.5rem)] leading-[0.9] tracking-[-0.035em] font-[760] text-white">
+                  <p className={`font-display tnum leading-[0.9] ${purity.value.includes("/") ? "text-[clamp(2.25rem,min(1.2rem+2.6vw,7vh),3.75rem)]" : "text-[clamp(3rem,min(1.8rem+4vw,10vh),5.5rem)]"} tracking-[-0.035em] font-[760] text-white`}>
                     {locale === "tr" && <span className="text-[0.42em] align-top text-steel mr-1">%</span>}
                     {purity.value}
                     {locale !== "tr" && <span className="text-[0.42em] align-top text-steel ml-1">%</span>}
