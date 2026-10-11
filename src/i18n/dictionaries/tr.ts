@@ -167,7 +167,7 @@ const tr = {
     ledgerTitle: "Her tonda hassasiyet.",
     ledgerIntro: "Rakamlar ancak bağlamıyla anlam taşır. Tekliflerimiz bu rakamlara dayanır.",
     ledger: [
-      { figure: "99.9935", unit: "%", label: "Bakır saflığı", text: "Grade A bakır katotta asgari Cu içeriği; LME tescilli rafinerilerden." },
+      { figure: "99.99", unit: "%", label: "Bakır saflığı", text: "Grade A bakır katotta asgari Cu içeriği; LME tescilli rafinerilerden." },
       { figure: "30+", unit: "", label: "Yıllık tecrübe", text: "Metal hammadde tedariğinde otuz yılı aşan tecrübe." },
       { figure: "ASTM · EN · DIN", unit: "", label: "Standartlar", text: "Şartnamenizin belirttiği standartta tedarik; bakır katot için ASTM B115 ve EN 1978." },
       { figure: "Her parti", unit: "", label: "Belgeli", text: "Her sevkiyatla spektro analiz raporu ve menşe şahadetnamesi teslim edilir." },

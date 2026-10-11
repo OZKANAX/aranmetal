@@ -168,7 +168,7 @@ const en: Dictionary = {
     ledgerTitle: "Precision at every ton.",
     ledgerIntro: "Figures mean little without their context. These are the ones our offers stand on.",
     ledger: [
-      { figure: "99.9935", unit: "%", label: "Copper purity", text: "Minimum Cu content of our Grade A cathode, from LME-registered refineries." },
+      { figure: "99.99", unit: "%", label: "Copper purity", text: "Minimum Cu content of our Grade A cathode, from LME-registered refineries." },
       { figure: "30+", unit: "", label: "Years of experience", text: "More than three decades in metal raw-material supply." },
       { figure: "ASTM · EN · DIN", unit: "", label: "Standards", text: "Supplied to the standard your specification names; ASTM B115 and EN 1978 for copper cathode." },
       { figure: "Every lot", unit: "", label: "Documented", text: "A spectro analysis report and certificate of origin travel with each shipment." },

@@ -23,7 +23,7 @@ export const defaultProducts = [
     specCode: "CU-CAT-A",
     specMaterialTr: "Elektrolitik Bakır Katot",
     specMaterialEn: "Electrolytic Copper Cathode",
-    specPurity: "Cu ≥ %99.9935",
+    specPurity: "Cu ≥ %99.99",
     specFormTr: "Plaka (~100kg / adet)",
     specFormEn: "Plate (~100kg / piece)",
     specUnitTr: "Metrik Ton (MT)",

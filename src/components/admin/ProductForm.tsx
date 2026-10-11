@@ -99,7 +99,7 @@ export function ProductForm({ product, created }: { product?: Product; created?:
                   <Input id="specCode" name="specCode" defaultValue={p?.specCode} />
                 </Field>
                 <Field label="Saflık / Alaşım Oranı" htmlFor="specPurity">
-                  <Input id="specPurity" name="specPurity" defaultValue={p?.specPurity} placeholder="Cu ≥ %99.9935" />
+                  <Input id="specPurity" name="specPurity" defaultValue={p?.specPurity} placeholder="Cu ≥ %99.99" />
                 </Field>
               </div>
               <LocalizedInput label="Malzeme Tanımı" name={{ tr: "specMaterialTr", en: "specMaterialEn" }} values={L(p?.specMaterialTr, p?.specMaterialEn)} />
