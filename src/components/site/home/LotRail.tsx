@@ -154,7 +154,7 @@ export function LotRail({ id, products, labels, locale }: { id: string; products
               {labels.title}
             </h2>
           </div>
-          <div className="lg:col-span-5 lg:col-start-8 flex flex-col justify-end gap-4">
+          <div className={`lg:col-span-5 lg:col-start-8 flex flex-col justify-end gap-4 ${pinned ? "lot-optional" : ""}`}>
             <p className="text-body text-on-navy-2 max-w-[52ch]">{labels.intro}</p>
             <Link href={labels.specTableHref} className="group nav-line self-start inline-flex items-center gap-2 text-small font-semibold text-white">
               {labels.specTable}

@@ -90,12 +90,12 @@
   --dur-cinematic: 900ms;
   /* Menü çubuğu üstte; piyasa şeridi (veri varsa) ekranın altına sabittir. */
   --ticker-h: 0px;
-  --nav-h: 72px;
+  --nav-h: 92px;
   --header-h: var(--nav-h);
 }
 @media (min-width: 1280px) {
   :root {
-    --nav-h: 80px;
+    --nav-h: 104px;
   }
 }
 
