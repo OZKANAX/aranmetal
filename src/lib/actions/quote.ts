@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { db } from "@/lib/db";
 import { hasLocale } from "@/i18n/config";
+import { sendQuoteNotification } from "@/lib/mail";
 
 export type QuoteFormState = {
   status: "idle" | "success" | "error";
@@ -58,6 +59,13 @@ export async function submitQuote(_prev: QuoteFormState, formData: FormData): Pr
   } catch (err) {
     console.error("Teklif talebi kaydedilemedi", err);
     return { status: "error", values: raw };
+  }
+
+  // Bildirim e-postası: gönderilemese de talep kayıtlı olduğu için kullanıcıya başarı döner
+  try {
+    await sendQuoteNotification({ ...parsed.data, locale: hasLocale(locale) ? locale : "tr" });
+  } catch (err) {
+    console.error("Teklif bildirimi e-postası gönderilemedi", err);
   }
 
   return { status: "success" };
