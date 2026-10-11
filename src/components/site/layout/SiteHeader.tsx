@@ -7,18 +7,20 @@ import { HeaderFrame } from "./HeaderFrame";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { NavLinks } from "./NavLinks";
-import { getNavItems, quoteHref } from "./nav";
+import { getNavItems, quoteHref, type NavProduct } from "./nav";
 
 export function SiteHeader({
   locale,
   dict,
   general,
+  products,
 }: {
   locale: Locale;
   dict: Dictionary;
   general: SectionContent<"general">;
+  products: NavProduct[];
 }) {
-  const items = getNavItems(locale, dict);
+  const items = getNavItems(locale, dict, products);
 
   return (
     <HeaderFrame homeHref={`/${locale}`}>

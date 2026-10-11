@@ -96,7 +96,26 @@ export function MobileMenu({
                     {item.label}
                     <Icon name="arrow_forward" className="text-[20px] text-steel" />
                   </Link>
-                  {item.children && (
+                  {item.groups && item.groups.length > 0 ? (
+                    <div className="-mt-1 pb-4 flex flex-col gap-4">
+                      {item.groups.map((g) => (
+                        <div key={g.href}>
+                          <Link href={g.href} className="inline-flex py-1 font-mono text-data text-gold">
+                            {g.label}
+                          </Link>
+                          <ul className="flex flex-col">
+                            {g.items.map((c) => (
+                              <li key={c.href}>
+                                <Link href={c.href} className="flex py-2 text-small text-on-navy-2 hover:text-white">
+                                  {c.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : item.children && (
                     <ul className="-mt-1 pb-4 flex flex-wrap gap-x-5 gap-y-1">
                       {item.children.slice(1).map((c) => (
                         <li key={c.href}>

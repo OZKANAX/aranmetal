@@ -41,6 +41,10 @@ const en: Dictionary = {
     specifications: "Technical Specifications",
     related: "Other Products",
     requestQuote: "Request a Quote for This Product",
+    sameGroup: "Other products in this group",
+    grade: "Grade",
+    stock: "Stock",
+    details: "About this product",
   },
   form: {
     name: "Full Name",

@@ -4,7 +4,7 @@ import "@/styles/site.css";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { siteFontVariables } from "@/lib/fonts";
-import { getFooterPages, getSection } from "@/lib/content/queries";
+import { getFooterPages, getProducts, getSection } from "@/lib/content/queries";
 import { getMarketData } from "@/lib/market";
 import { SiteHeader } from "@/components/site/layout/SiteHeader";
 import { SiteFooter } from "@/components/site/layout/SiteFooter";
@@ -46,7 +46,7 @@ export default async function SiteLayout({ children, params }: LayoutProps<"/[lo
   if (!hasLocale(locale)) notFound();
 
   const dict = getDictionary(locale);
-  const [general, legalPages, market] = await Promise.all([getSection("general", locale), getFooterPages(locale), getMarketData()]);
+  const [general, legalPages, market, products] = await Promise.all([getSection("general", locale), getFooterPages(locale), getMarketData(), getProducts(locale)]);
   const categories = (["copper", "aluminum", "alloy", "plastic"] as const).map((key) => ({ key, label: dict.categories[key] }));
 
   return (
@@ -60,7 +60,7 @@ export default async function SiteLayout({ children, params }: LayoutProps<"/[lo
         />
       </head>
       <body data-ticker={market ? "on" : "off"} className="bg-graphite font-sans text-body text-ink antialiased pb-[var(--ticker-h)]">
-        <SiteHeader locale={locale} dict={dict} general={general} />
+        <SiteHeader locale={locale} dict={dict} general={general} products={products.map((p) => ({ slug: p.slug, name: p.name, category: p.category }))} />
         <main className="w-full pt-[var(--header-h)] bg-paper min-h-[calc(100vh-80px)] flex flex-col">{children}</main>
         <SiteFooter locale={locale} dict={dict} general={general} categories={categories} legalPages={legalPages} />
         {market && (

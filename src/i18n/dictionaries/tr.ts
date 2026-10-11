@@ -40,6 +40,10 @@ const tr = {
     specifications: "Teknik Özellikler",
     related: "Diğer Ürünler",
     requestQuote: "Bu Ürün İçin Teklif İste",
+    sameGroup: "Aynı gruptaki ürünler",
+    grade: "Sınıf",
+    stock: "Stok",
+    details: "Ürün hakkında",
   },
   form: {
     name: "Ad & Soyad",

@@ -40,7 +40,44 @@ export function NavLinks({ items }: { items: NavItem[] }) {
               />
             </Link>
             <div className="invisible opacity-0 -translate-y-1 group-hover/dd:visible group-hover/dd:opacity-100 group-hover/dd:translate-y-0 group-focus-within/dd:visible group-focus-within/dd:opacity-100 group-focus-within/dd:translate-y-0 transition-[opacity,transform,visibility] duration-300 ease-out-quint absolute -left-5 top-full z-50">
-              <ul className="min-w-64 bg-graphite-2 border border-graphite-rule py-2 shadow-[0_24px_48px_-16px_rgba(0,0,0,0.6)]">
+              {item.groups && item.groups.length > 0 ? (
+                <div className="bg-graphite-2 border border-graphite-rule shadow-[0_24px_48px_-16px_rgba(0,0,0,0.6)]">
+                  <div className="flex gap-10 px-6 pt-5 pb-4">
+                    {item.groups.map((g) => (
+                      <div key={g.href} className="min-w-44">
+                        <Link
+                          href={g.href}
+                          className="block pb-2 mb-1 border-b border-graphite-rule font-mono text-data text-gold hover:text-white transition-colors"
+                        >
+                          {g.label}
+                        </Link>
+                        <ul>
+                          {g.items.map((c) => (
+                            <li key={c.href}>
+                              <Link
+                                href={c.href}
+                                aria-current={pathname === c.href ? "page" : undefined}
+                                className="group flex items-center justify-between gap-4 py-2 text-small text-on-navy-2 hover:text-white aria-[current=page]:text-white transition-colors whitespace-nowrap"
+                              >
+                                {c.label}
+                                <Icon name="arrow_forward" className="arrow-nudge text-[15px] text-steel opacity-0 group-hover:opacity-100 transition-opacity" />
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href={item.href}
+                    className="group flex items-center justify-between gap-6 px-6 py-3 border-t border-graphite-rule text-small font-semibold text-white hover:bg-graphite-3 transition-colors"
+                  >
+                    {item.children?.[0]?.label ?? item.label}
+                    <Icon name="arrow_forward" className="arrow-nudge text-[16px]" />
+                  </Link>
+                </div>
+              ) : (
+                <ul className="min-w-64 bg-graphite-2 border border-graphite-rule py-2 shadow-[0_24px_48px_-16px_rgba(0,0,0,0.6)]">
                 {item.children.map((c) => (
                   <li key={c.href}>
                     <Link
@@ -52,7 +89,8 @@ export function NavLinks({ items }: { items: NavItem[] }) {
                     </Link>
                   </li>
                 ))}
-              </ul>
+                </ul>
+              )}
             </div>
           </div>
         );
