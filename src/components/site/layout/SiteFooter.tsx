@@ -50,8 +50,8 @@ export function SiteFooter({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-x-8 gap-y-12 py-16">
-          <div className="col-span-2 md:col-span-3 lg:col-span-3 flex flex-col gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12 py-16">
+          <div className="col-span-2 lg:col-span-4 flex flex-col gap-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/brand/logo-dark.svg" alt={general.companyName} className="h-16 w-auto self-start" />
             <p className="text-small text-on-navy-2 max-w-[38ch]">{general.footerDescription}</p>
@@ -72,7 +72,7 @@ export function SiteFooter({
             )}
           </div>
 
-          <FooterColumn title={l.footerCompany} className="lg:col-span-2 lg:col-start-5">
+          <FooterColumn title={l.footerCompany} className="lg:col-span-2 lg:col-start-9">
             <Link href={`/${locale}/about`} className={linkClass}>
               {dict.nav.about}
             </Link>
@@ -96,22 +96,6 @@ export function SiteFooter({
             <Link href={`/${locale}/products`} className={linkClass}>
               {dict.home.allProducts}
             </Link>
-          </FooterColumn>
-
-          <FooterColumn title={l.footerMarkets} className="lg:col-span-2">
-            {l.regions.map((r) => (
-              <span key={r.id} className="text-small text-on-navy-2">
-                {r.name}
-              </span>
-            ))}
-          </FooterColumn>
-
-          <FooterColumn title={l.footerStandards} className="lg:col-span-2">
-            <Link href={`/${locale}/products#spec-table`} className={linkClass}>
-              {l.footerSpecTable}
-            </Link>
-            <span className="font-mono text-data text-steel">ASTM B115 · EN 1978</span>
-            <span className="font-mono text-data text-steel">LME Grade A · P1020</span>
           </FooterColumn>
         </div>
 
